@@ -172,14 +172,49 @@ Detta är inte en uppmaning till passivitet, utan till en inre hållning. Att vi
   {
     id: '3',
     title: 'Vem är Jesus?',
-    body: `Historiskt sett är Jesus från Nasaret en person som faktiskt levt. Men vem var han? En vis lärare? En profet? Eller något mer?
+    body: `Historiskt sett är Jesus från Nasaret en person som faktiskt levt. Men vem var han egentligen – en vis lärare, en profet, eller något mycket större?
 
-C.S. Lewis formulerade det kända "trilemmat": Antingen var Jesus galen, en lögnare, eller så var han den han sa att han var – Guds Son.
+Jesus från Nasaret är mer än en religiös figur. Han är en historisk person, en världsomvälvande gestalt – och, enligt Bibeln, själva Gud som blev människa. Men vem är han egentligen, och varför spelar det någon roll idag?
 
-Genom evangelierna får vi möta en person som bryter normer, som rör vid de spetälska, som äter med syndare och som utmanar religiös makt.`,
+En verklig person i historien
+
+Det finns få historiska personer från antiken som är lika väldokumenterade som Jesus. Utöver de fyra evangelierna – som i sig är trovärdiga antika källor – nämns Jesus också av historiker som Josefus, Tacitus och Plinius den yngre. Det råder bred vetenskaplig konsensus om att Jesus levde, predikade, korsfästes och att hans efterföljare från allra första början vittnade om att han uppstått från de döda.
+
+Men även om Jesus är historiskt trovärdig – är det övernaturliga trovärdigt?
+
+Vetenskapen närmar sig mysteriet
+
+Många antar att vetenskapen och tron står i konflikt. Men verkligheten är mer nyanserad. Ju mer vi utforskar universum, desto mer mysterium stöter vi på. Kvantfysikens värld bryter mot våra vardagliga förväntningar: partiklar kan vara på två platser samtidigt, påverka varandra över enorma avstånd, och uppföra sig både som vågor och partiklar beroende på om någon observerar dem.
+
+Vi lever i en värld där tid, rum och materia inte är så "solida" som vi trodde. Det som en gång avfärdades som övernaturligt – som tanken att en Gud kan träda in i tiden och bli människa – framstår i dag som filosofiskt möjligt och vetenskapligt mindre främmande än tidigare.
+
+Vem sade Jesus att han var?
+
+Jesus sade inte bara att vi skulle älska våra fiender eller vända andra kinden till. Han sade också radikala saker som:
+”Jag är vägen, sanningen och livet. Ingen kommer till Fadern utom genom mig” (Johannes 14:6),
+och
+”Jag och Fadern är ett” (Johannes 10:30).
+
+Han påstod inte bara att han kände Gud – utan att han var Gud. Och hans liv, död och uppståndelse utgör kärnan i kristendomen. Om uppståndelsen är sann, så bevisar den hans anspråk. Om den inte är det, är hela tron tom.
+
+Varför du behöver Jesus – särskilt i Sverige
+
+I ett sekulärt Sverige där Gud ofta förpassats till historiens skräphög, står många ändå kvar med tomheten. Vi har frihet, teknologi och trygghet – men också ensamhet, ångest och en längtan efter mening.
+
+Jesus erbjuder något unikt:
+Inte bara en livsfilosofi, utan förlåtelse.
+Inte bara inre frid, utan evigt liv.
+Inte bara kärlek, utan sanning.
+
+Han möter dig där du är – med öppna armar, inte med krav.
+Han bjuder in dig till att lära känna honom, inte bara som en symbol, utan som en levande Frälsare.
+
+Avslutande bön
+
+Jesus, om du är den du säger att du är – visa dig för mig. Jag är öppen. Hjälp mig tro, även när jag tvivlar. Amen.`,
     categories: ['Evangeliet', 'Identitet i Kristus'],
-    tags: ['Teologi', 'Jesus'],
-    createdAt: '2023-06-15',
+    tags: ['Teologi', 'Jesus', 'Vem är Jesus-serien'],
+    createdAt: '2025-12-01',
     featured: false,
     mainImageUrl: 'https://images.unsplash.com/photo-1507643179173-39db7f134586?q=80&w=600&auto=format&fit=crop' // Sky/Clouds
   }
