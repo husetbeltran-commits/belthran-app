@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ARTICLES } from '../data/mockData';
 import { ChevronLeft, Share2, Calendar } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 
 const ArticleDetailPage: React.FC = () => {
   const { id } = useParams();
@@ -13,13 +14,6 @@ const ArticleDetailPage: React.FC = () => {
     navigator.clipboard.writeText(window.location.href);
     alert('Länk kopierad!');
   };
-
-  // Basic paragraph formatting
-  const formattedBody = article.body.split('\n').map((line, idx) => {
-    if (line.startsWith('###')) return <h3 key={idx} className="text-xl font-bold mt-6 mb-2 text-primary">{line.replace('###', '')}</h3>;
-    if (line.trim() === '') return <br key={idx} />;
-    return <p key={idx} className="mb-4 text-primary/80 leading-relaxed">{line}</p>;
-  });
 
   return (
     <div className="min-h-screen bg-background animate-fade-in pb-20">
@@ -55,8 +49,8 @@ const ArticleDetailPage: React.FC = () => {
             <span>{article.createdAt}</span>
           </div>
 
-          <div className="prose dark:prose-invert max-w-none">
-            {formattedBody}
+          <div className="prose prose-lg dark:prose-invert max-w-none">
+            <ReactMarkdown>{article.body}</ReactMarkdown>
           </div>
        </div>
     </div>
