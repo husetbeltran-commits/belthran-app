@@ -29,6 +29,7 @@ const HomePage: React.FC = () => {
   const [isRandomizing, setIsRandomizing] = useState(false);
   const [animatedReference, setAnimatedReference] = useState<string | null>(null);
   const [animatedText, setAnimatedText] = useState<string | null>(null);
+  const [reflectionAnimationKey, setReflectionAnimationKey] = useState(0);
 
   const scrambleIntervalRef = useRef<number | null>(null);
 
@@ -70,6 +71,7 @@ const HomePage: React.FC = () => {
       setAnimatedText(null);
       setCurrentVerse(nextVerse);
       setReflection(generateReflection(nextVerse));
+      setReflectionAnimationKey((prev) => prev + 1);
       setIsRandomizing(false);
     }, 700);
   };
@@ -163,7 +165,10 @@ const HomePage: React.FC = () => {
               </div>
 
               {/* Reflection */}
-              <div className="bg-surface-variant/50 p-4 rounded-lg border border-border/50">
+              <div
+                key={reflectionAnimationKey}
+                className="bg-surface-variant/50 p-4 rounded-lg border border-border/50 animated-reflection"
+              >
                  <div className="flex items-center gap-2 mb-2">
                    <Sparkles size={12} className="text-accent" />
                    <span className="text-xs font-bold text-primary">Reflektion</span>

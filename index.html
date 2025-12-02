@@ -81,6 +81,24 @@
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 200ms;
       }
+
+      /* Reflection animation */
+      .animated-reflection {
+        opacity: 0;
+        transform: translateY(8px);
+        animation: reflectionFadeUp 300ms ease-out forwards;
+      }
+
+      @keyframes reflectionFadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
     </style>
   <script type="importmap">
 {
