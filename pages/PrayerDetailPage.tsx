@@ -22,8 +22,8 @@ const PrayerDetailPage: React.FC = () => {
     ? normalizeAudioUrl(currentTrack.audioUrl)
     : undefined;
 
-  const youtubeEmbedSrc = isYouTubeTrack && isPlaying
-    ? buildYouTubeEmbedSrc(currentTrack?.audioUrl, { autoplay: true })
+  const youtubeEmbedSrc = isYouTubeTrack
+    ? buildYouTubeEmbedSrc(currentTrack?.audioUrl, { autoplay: isPlaying })
     : undefined;
 
   useEffect(() => {
@@ -153,15 +153,16 @@ const PrayerDetailPage: React.FC = () => {
             {/* Hidden Media Elements */}
             {isYouTubeTrack ? (
               youtubeEmbedSrc ? (
-                <iframe
-                  key={`${currentTrack.id}-${isPlaying ? 'play' : 'pause'}`}
-                  src={youtubeEmbedSrc}
-                  className="absolute w-px h-px opacity-0 pointer-events-none"
-                  title={currentTrack.title}
-                  allow="autoplay; encrypted-media; picture-in-picture"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                />
+                <div className="absolute w-0 h-0 overflow-hidden" aria-hidden="true">
+                  <iframe
+                    key={`${currentTrack.id}-${isPlaying ? 'play' : 'pause'}`}
+                    src={youtubeEmbedSrc}
+                    title={currentTrack.title}
+                    allow="autoplay; encrypted-media"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen={false}
+                  />
+                </div>
               ) : null
             ) : (
               <audio
