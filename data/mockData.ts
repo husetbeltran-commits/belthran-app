@@ -284,9 +284,9 @@ Amen.`,
     createdAt: '2023-02-10T07:45:00Z',
     featured: true,
     tracks: [
-      { id: 't1', title: 'Oceans (instrumental)', audioUrl: 'https://youtu.be/H9U9E3c0Qzg?si=oXg09CTWbM-L0Hcu' },
-      { id: 't2', title: 'You Say', audioUrl: 'https://youtu.be/HqpNGYbcy3U?si=-SVqnJH0IMBffCA4' },
-      { id: 't3', title: 'YHWH will manifest Himself', audioUrl: 'https://youtu.be/UZO0gOLUHJU?si=xU-I91SOEK4KMYOm' }
+      { id: 't1', title: 'Oceans (instrumental)', audioUrl: 'https://www.youtube.com/embed/H9U9E3c0Qzg?si=2gp01Nt0Lb1U7D09' },
+      { id: 't2', title: 'You Say', audioUrl: 'https://www.youtube.com/embed/HqpNGYbcy3U?si=VMGN31IzXJ2GNtO4' },
+      { id: 't3', title: 'YHWH will manifest Himself', audioUrl: 'https://www.youtube.com/embed/UZO0gOLUHJU?si=ohMnHT-kF6SlCcLV' }
     ],
     imageUrl: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=600&auto=format&fit=crop' // Calm lake/morning mist
   },

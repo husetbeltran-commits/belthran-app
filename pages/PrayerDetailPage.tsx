@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { PRAYERS } from '../data/mockData';
 import { ChevronLeft, Play, Pause, Repeat, Music2 } from 'lucide-react';
-import { buildYouTubeEmbedSrc, isYouTubeUrl, normalizeAudioUrl } from '../utils/mediaHelpers';
+import { buildYouTubeEmbedSrc, isYouTubeUrl } from '../utils/mediaHelpers';
 
 const PrayerDetailPage: React.FC = () => {
   const { id } = useParams();
@@ -17,24 +17,21 @@ const PrayerDetailPage: React.FC = () => {
 
   const hasTracks = prayer?.tracks && prayer.tracks.length > 0;
   const currentTrack = hasTracks ? prayer?.tracks[currentTrackIndex] : null;
-  const isYouTubeTrack = currentTrack?.audioUrl ? isYouTubeUrl(currentTrack.audioUrl) : false;
-  const normalizedTrackUrl = currentTrack?.audioUrl
-    ? normalizeAudioUrl(currentTrack.audioUrl)
-    : undefined;
-
+  const trackUrl = currentTrack?.audioUrl;
+  const isYouTubeTrack = trackUrl ? isYouTubeUrl(trackUrl) : false;
   const youtubeEmbedSrc = isYouTubeTrack
-    ? buildYouTubeEmbedSrc(currentTrack?.audioUrl, { autoplay: isPlaying })
+    ? buildYouTubeEmbedSrc(trackUrl, { autoplay: isPlaying })
     : undefined;
 
   useEffect(() => {
-    if (!audioRef.current || isYouTubeTrack || !normalizedTrackUrl) return;
+    if (!audioRef.current || isYouTubeTrack || !trackUrl) return;
 
     if (isPlaying) {
       audioRef.current.play();
     } else {
       audioRef.current.pause();
     }
-  }, [isPlaying, currentTrackIndex, isYouTubeTrack, normalizedTrackUrl]);
+  }, [isPlaying, currentTrackIndex, isYouTubeTrack, trackUrl]);
 
   const handleTrackEnd = () => {
     if (!hasTracks || !prayer) return;
@@ -53,7 +50,7 @@ const PrayerDetailPage: React.FC = () => {
     } else {
       // none
       if (currentTrackIndex < prayer.tracks.length - 1) {
-         setCurrentTrackIndex(prev => prev + 1);
+        setCurrentTrackIndex(prev => prev + 1);
       } else {
         setIsPlaying(false);
       }
@@ -153,7 +150,7 @@ const PrayerDetailPage: React.FC = () => {
             {/* Hidden Media Elements */}
             {isYouTubeTrack ? (
               youtubeEmbedSrc ? (
-                <div className="absolute w-0 h-0 overflow-hidden" aria-hidden="true">
+                <div className="absolute -left-[9999px] w-[1px] h-[1px]" aria-hidden="true">
                   <iframe
                     key={`${currentTrack.id}-${isPlaying ? 'play' : 'pause'}`}
                     src={youtubeEmbedSrc}
@@ -161,13 +158,14 @@ const PrayerDetailPage: React.FC = () => {
                     allow="autoplay; encrypted-media"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen={false}
+                    loading="lazy"
                   />
                 </div>
               ) : null
             ) : (
               <audio
                 ref={audioRef}
-                src={normalizedTrackUrl}
+                src={trackUrl}
                 onEnded={handleTrackEnd}
               />
             )}
