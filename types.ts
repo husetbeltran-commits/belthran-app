@@ -54,6 +54,7 @@ export interface BibleVerse {
   reference: string;
   text: string;
   isDailyWord?: boolean;
+  reflection?: string;
 }
 
 export interface ChatMessage {

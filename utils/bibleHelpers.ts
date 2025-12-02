@@ -53,7 +53,7 @@ export const getDailyVerse = (): BibleVerse => {
  * Returns a random verse from the collection.
  */
 export const getRandomVerse = (): BibleVerse => {
-   return VERSES[Math.floor(Math.random() * VERSES.length)];
+  return VERSES[Math.floor(Math.random() * VERSES.length)];
 };
 
 /**
@@ -61,6 +61,11 @@ export const getRandomVerse = (): BibleVerse => {
  * In a real app, this would call an AI backend. Here we use a randomized bank of reflections.
  */
 export const generateReflection = (verse: BibleVerse): string => {
+  // Prefer a verse-specific reflection when available, otherwise fall back to generic safe reflections.
+  if (verse.reflection && verse.reflection.trim().length > 0) {
+    return verse.reflection.trim();
+  }
+
   // Stubbed reflections that are biblically grounded and non-speculative.
   const reflections = [
     "Detta bibelord påminner oss om Guds ständiga närvaro. Oavsett vad vi möter idag får vi vila i att Han har omsorg om oss.",

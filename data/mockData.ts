@@ -610,26 +610,32 @@ export const VERSES: BibleVerse[] = [
     id: '1',
     reference: 'Johannes 3:16',
     text: 'Så älskade Gud världen att han gav den sin ende son, för att de som tror på honom inte skall gå under utan ha evigt liv.',
-    isDailyWord: true
+    isDailyWord: true,
+    reflection:
+      'Gud tar första steget med gränslös kärlek; frälsningen är gåva, inte prestation. Du får vila i att du är älskad och inbjuden att ta emot.'
   },
   {
     id: '2',
     reference: 'Psaltaren 23:1',
-    text: 'Herren är min herde, mig skall intet fattas.'
+    text: 'Herren är min herde, mig skall intet fattas.',
+    reflection: 'Gud är en närvarande herde som ser dina behov. I hans omsorg finns trygghet och utrymme att andas, även mitt i det vardagliga.'
   },
   {
     id: '3',
     reference: 'Filipperbrevet 4:6-7',
-    text: 'Gör er inga bekymmer, utan när ni åkallar och ber, tacka då Gud och låt honom få veta alla era önskningar. Då skall Guds frid, som är mera värd än allt vi tänker, ge era hjärtan och era tankar skydd i Kristus Jesus.'
+    text: 'Gör er inga bekymmer, utan när ni åkallar och ber, tacka då Gud och låt honom få veta alla era önskningar. Då skall Guds frid, som är mera värd än allt vi tänker, ge era hjärtan och era tankar skydd i Kristus Jesus.',
+    reflection: 'Vi får lägga oron i Guds händer och tala med honom om allt. Hans frid bär och beskyddar, även när situationen inte förändras direkt.'
   },
   {
     id: '4',
     reference: 'Matteusevangeliet 11:28',
-    text: 'Kom till mig, alla ni som arbetar och bär på tunga bördor, så skall jag ge er vila.'
+    text: 'Kom till mig, alla ni som arbetar och bär på tunga bördor, så skall jag ge er vila.',
+    reflection: 'Jesus kallar de trötta och tyngda nära, inte de perfekta. Vilans källa är relationen med honom, där hjärtat får ny kraft.'
   },
   {
     id: '5',
     reference: 'Jeremia 29:11',
-    text: 'Jag vet vilka tankar jag har för er, säger Herren, nämligen fridens tankar och inte ofärdens för att ge er en framtid och ett hopp.'
+    text: 'Jag vet vilka tankar jag har för er, säger Herren, nämligen fridens tankar och inte ofärdens för att ge er en framtid och ett hopp.',
+    reflection: 'Gud ser längre än våra begränsade perspektiv och bär på planer av hopp. Även när vägen känns oklar arbetar han för vårt bästa och vår framtid.'
   }
 ];
