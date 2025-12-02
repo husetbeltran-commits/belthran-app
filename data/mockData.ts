@@ -177,19 +177,68 @@ export const ARTICLES: Article[] = [
   {
     id: '1',
     title: 'Vad innebär det att tro?',
-    body: `Att tro handlar inte bara om att hålla vissa påståenden för sanna. Det handlar om en relation.
+    body: `## Vad innebär det att tro?
 
-### En levande relation
-När vi talar om tro i kristen bemärkelse, talar vi om tillit. Som ett barn litar på sin förälder, är vi inbjudna att lita på Gud. Det är en vandring där vi dag för dag lär oss att känna igen Guds röst.
+Vi hör ofta ordet ”tro” – i kyrkan, i skolan, på sociala medier. Men vad betyder det egentligen att tro? Är det bara en känsla? En idé? Eller är det något som faktiskt kan förändra hur vi tänker, känner och lever?
 
-### Tvivel är en del av tron
-Många tror att tvivel är motsatsen till tro, men ofta är tvivel en del av trons växt. Genom att våga ställa de svåra frågorna kan vår tro fördjupas och mogna. Gud är inte rädd för dina frågor.
+## Tro påverkar oss – på riktigt
 
-### Gemenskap
-Tron är heller inte något vi bär ensamma. Vi är skapade för gemenskap, att vara en del av en kropp. Kyrkan är inte en byggnad, utan vi människor tillsammans.`,
-    categories: ['Evangeliet', 'Livet med Gud'],
-    tags: ['Grunder', 'Intro'],
-    createdAt: '2023-10-12T14:00:00Z',
+Psykologer vet att vad vi tror på formar hur vi mår. Tro – även när den inte är religiös – har verklig effekt. Den kan ge hopp, minska stress och till och med påverka kroppen. Ett av de tydligaste exemplen är placeboeffekten.
+
+### Vad är placebo?
+
+Placebo betyder att man får något som ser ut som medicin – men som inte innehåller något verksamt ämne. Ändå mår många bättre. Varför? För att de tror att det hjälper. Hjärnan reagerar. Kroppen svarar. Tro gör något.
+
+Forskning har visat att patienter som tror att de får behandling ofta upplever förbättring, även när de inte får ”riktig” medicin. Det är som om kroppen lyssnar på tanken. Så om tro kan påverka hur vi upplever smärta, rädsla och läkning – då är tro något mer än bara en idé. Det är en brygga mellan det osynliga och det verkliga.
+
+## Finns det något att tro på?
+
+Många i dag tror på vetenskap – vilket är bra. Men vetenskap handlar om att söka sanning, inte att redan veta allt. Och det är faktiskt väldigt få saker i livet vi kan bevisa helt. Du kan inte bevisa att dina vänner älskar dig. Eller att din framtid blir bra. Men du kan leva som om det är sant, och det förändrar hur du möter världen.
+
+På samma sätt kan tron på Gud vara något djupt verkligt – även om du inte kan mäta det i ett labb. Det är en tro på något större än dig själv, som bär genom livet och ger riktning.
+
+## Vad gör det med livet?
+
+Att tro på Gud är inte att blunda för verkligheten. Det är att våga tro att det finns mer än det vi kan se. Det påverkar hur vi ser på andra människor, på oss själva, på framtiden. Men det räcker inte att bara ha en tro i tanken. För att den ska betyda något, behöver du leva ut den.
+
+Om du säger att du tror på sanning – men ändå ljuger.
+
+Om du säger att du tror på kärlek – men ändå hatar.
+
+Då är tron tom. Tron behöver handling. Den behöver få forma dina val.
+
+## Vad gör man med tvivel?
+
+Tvivla är inte samma sak som att sluta tro. Det är ofta en del av att tro på riktigt. Om du aldrig ifrågasätter något, har du kanske inte tänkt så djupt. Men om du ställer frågor – för att du verkligen vill veta – då är det ett tecken på att du söker sanningen. Och kristen tro är inte rädd för sanning. Faktum är: den bygger på den.
+
+## Tro och vetenskap – inte fiender
+
+Du måste inte välja mellan Gud och vetenskap. De flesta av världens första vetenskapsmän – Newton, Kepler, Pascal – trodde på Gud. Inte trots vetenskapen, utan på grund av den. För om universum har en struktur, skönhet och lagbundenhet – är det då så orimligt att tro att det också finns en Skapare? Att tro på Gud kan vara den djupaste sortens sanningstörst.
+
+## En tro som lever – tillsammans
+
+Du är inte ensam. Tron växer ofta bäst i gemenskap med andra. Att få prata, tvivla, be, fråga – tillsammans med andra som söker – kan göra all skillnad. Kyrkan är inte en plats för perfekta människor. Det är en plats för sökande. Och i centrum av den kristna tron finns inte bara en idé – utan en person.
+
+## Tron på Jesus
+
+Kristendomen bygger på en historisk person: Jesus från Nasaret. En verklig människa – som levde, dog och (enligt vittnesmål) uppstod. Men Bibeln säger också att han var mer än människa. Han var – och är – Gud själv, som kom till jorden. Och hans ord har förändrat allt.
+
+Jesus lärde att du ska älska dina fiender. Att du har ett evigt värde. Att sanning och nåd hör ihop. Att den störste är den som tjänar andra. Han vände världen upp och ner – och det gör han fortfarande.
+
+## En utmaning till dig
+
+Det räcker inte att bara läsa om tro. Du behöver prova den.
+
+- Läs vad Jesus sa.
+- Testa att leva som om det är sant.
+- Vänd andra kinden till.
+- Be för någon du ogillar.
+- Ge till någon som inte kan ge tillbaka.
+
+Kanske upptäcker du att tron inte bara är något du har – utan något som bär dig.`,
+    categories: ['Evangeliet', 'Livet med Gud', 'Teologi'],
+    tags: ['Tro', 'Vetenskap', 'Tvivel', 'Gemenskap', 'Jesus'],
+    createdAt: '2024-04-05T13:30:00Z',
     featured: true,
     pinned: true,
     mainImageUrl: 'https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=600&auto=format&fit=crop' // Open book/Light
