@@ -20,6 +20,7 @@ export interface AudioTrack {
   id: string;
   title: string;
   youtubeUrl?: string;
+  // Can be a direct audio file URL or a YouTube share/embed link
   audioUrl?: string;
 }
 
