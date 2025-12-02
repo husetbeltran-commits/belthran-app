@@ -255,7 +255,7 @@ Som tvår mig vit som snö`,
     tags: ['Omvändelse', 'Helgelse', 'Jesu blod'],
     createdAt: '2024-07-15T10:30:00Z',
     youtubeUrl: 'https://www.youtube.com/embed/zFD3zqxWWTQ?si=ac-ITTeYVbrznWur',
-    imageUrl: 'https://images.unsplash.com/photo-1495985835785-2c08f62c1e1c?q=80&w=600&auto=format&fit=crop'
+    imageUrl: 'https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?q=80&w=600&auto=format&fit=crop'
   }
 ];
 
