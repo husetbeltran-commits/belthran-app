@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { PRAYERS } from '../data/mockData';
-import { ChevronLeft, Play, Pause, Repeat, Music2, Volume2 } from 'lucide-react';
+import { ChevronLeft, Play, Pause, Repeat, Music2 } from 'lucide-react';
+import { isYouTubeUrl, normalizeAudioUrl } from '../utils/mediaHelpers';
 
 const PrayerDetailPage: React.FC = () => {
   const { id } = useParams();
@@ -16,14 +17,20 @@ const PrayerDetailPage: React.FC = () => {
 
   const hasTracks = prayer?.tracks && prayer.tracks.length > 0;
   const currentTrack = hasTracks ? prayer?.tracks[currentTrackIndex] : null;
+  const isYouTubeTrack = currentTrack?.audioUrl ? isYouTubeUrl(currentTrack.audioUrl) : false;
+  const normalizedTrackUrl = currentTrack?.audioUrl
+    ? normalizeAudioUrl(currentTrack.audioUrl)
+    : undefined;
 
   useEffect(() => {
-    if (isPlaying && audioRef.current) {
+    if (!audioRef.current || isYouTubeTrack || !normalizedTrackUrl) return;
+
+    if (isPlaying) {
       audioRef.current.play();
-    } else if (!isPlaying && audioRef.current) {
+    } else {
       audioRef.current.pause();
     }
-  }, [isPlaying, currentTrackIndex]);
+  }, [isPlaying, currentTrackIndex, isYouTubeTrack, normalizedTrackUrl]);
 
   const handleTrackEnd = () => {
     if (!hasTracks || !prayer) return;
@@ -139,12 +146,24 @@ const PrayerDetailPage: React.FC = () => {
               </div>
             )}
             
-            {/* Hidden Audio Element */}
-            <audio 
-              ref={audioRef}
-              src={currentTrack.audioUrl}
-              onEnded={handleTrackEnd}
-            />
+            {/* Hidden Media Elements */}
+            {isYouTubeTrack ? (
+              isPlaying && normalizedTrackUrl ? (
+                <iframe
+                  key={currentTrack.id}
+                  src={`${normalizedTrackUrl}${normalizedTrackUrl.includes('?') ? '&' : '?'}autoplay=1`}
+                  className="hidden"
+                  title={currentTrack.title}
+                  allow="autoplay; encrypted-media"
+                />
+              ) : null
+            ) : (
+              <audio
+                ref={audioRef}
+                src={normalizedTrackUrl}
+                onEnded={handleTrackEnd}
+              />
+            )}
           </div>
         </div>
       )}

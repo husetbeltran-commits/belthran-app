@@ -284,8 +284,9 @@ Amen.`,
     createdAt: '2023-02-10T07:45:00Z',
     featured: true,
     tracks: [
-      { id: 't1', title: 'Stillhet (Piano)', audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3' },
-      { id: 't2', title: 'Regnljud', audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3' }
+      { id: 't1', title: 'Oceans (instrumental)', audioUrl: 'https://youtu.be/H9U9E3c0Qzg?si=oXg09CTWbM-L0Hcu' },
+      { id: 't2', title: 'You Say', audioUrl: 'https://youtu.be/HqpNGYbcy3U?si=-SVqnJH0IMBffCA4' },
+      { id: 't3', title: 'YHWH will manifest Himself', audioUrl: 'https://youtu.be/UZO0gOLUHJU?si=xU-I91SOEK4KMYOm' }
     ],
     imageUrl: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=600&auto=format&fit=crop' // Calm lake/morning mist
   },
