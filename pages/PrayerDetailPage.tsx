@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { PRAYERS } from '../data/mockData';
 import { ChevronLeft, Play, Pause, Repeat, Music2 } from 'lucide-react';
-import { buildYouTubeEmbedSrc, isYouTubeUrl } from '../utils/mediaHelpers';
+import { isYouTubeEmbedUrl } from '../utils/mediaHelpers';
 
 const PrayerDetailPage: React.FC = () => {
   const { id } = useParams();
@@ -18,10 +18,8 @@ const PrayerDetailPage: React.FC = () => {
   const hasTracks = prayer?.tracks && prayer.tracks.length > 0;
   const currentTrack = hasTracks ? prayer?.tracks[currentTrackIndex] : null;
   const trackUrl = currentTrack?.audioUrl;
-  const isYouTubeTrack = trackUrl ? isYouTubeUrl(trackUrl) : false;
-  const youtubeEmbedSrc = isYouTubeTrack
-    ? buildYouTubeEmbedSrc(trackUrl, { autoplay: isPlaying })
-    : undefined;
+  const isYouTubeTrack = trackUrl ? isYouTubeEmbedUrl(trackUrl) : false;
+  const playPauseDisabled = isYouTubeTrack;
 
   useEffect(() => {
     if (!audioRef.current || isYouTubeTrack || !trackUrl) return;
@@ -32,6 +30,13 @@ const PrayerDetailPage: React.FC = () => {
       audioRef.current.pause();
     }
   }, [isPlaying, currentTrackIndex, isYouTubeTrack, trackUrl]);
+
+  useEffect(() => {
+    if (isYouTubeTrack && audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+  }, [isYouTubeTrack]);
 
   const handleTrackEnd = () => {
     if (!hasTracks || !prayer) return;
@@ -109,9 +114,16 @@ const PrayerDetailPage: React.FC = () => {
                   </button>
 
                  {/* Play/Pause Button */}
-                 <button 
-                  onClick={() => setIsPlaying(!isPlaying)}
-                  className="bg-accent hover:bg-accent-hover text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-transform active:scale-95"
+                 <button
+                  onClick={() => {
+                    if (playPauseDisabled) return;
+                    setIsPlaying(!isPlaying);
+                  }}
+                  disabled={playPauseDisabled}
+                  className={`bg-accent hover:bg-accent-hover text-white w-10 h-10 rounded-full flex items-center justify-center shadow-md transition-transform active:scale-95 ${
+                    playPauseDisabled ? 'opacity-50 cursor-not-allowed hover:bg-accent' : ''
+                  }`}
+                  title={playPauseDisabled ? 'Kontrollera uppspelning via YouTube-spelaren' : 'Spela/Pausa'}
                 >
                   {isPlaying ? (
                     <Pause size={18} fill="currentColor" />
@@ -130,7 +142,9 @@ const PrayerDetailPage: React.FC = () => {
                     key={track.id}
                     onClick={() => {
                       setCurrentTrackIndex(idx);
-                      setIsPlaying(true);
+                      const selectedTrack = prayer.tracks[idx];
+                      const isYouTubeSelection = isYouTubeEmbedUrl(selectedTrack.audioUrl);
+                      setIsPlaying(!isYouTubeSelection);
                     }}
                     className={`whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-medium transition-all flex items-center gap-2 border ${
                       currentTrackIndex === idx 
@@ -147,21 +161,18 @@ const PrayerDetailPage: React.FC = () => {
               </div>
             )}
             
-            {/* Hidden Media Elements */}
+            {/* Media Elements */}
             {isYouTubeTrack ? (
-              youtubeEmbedSrc ? (
-                <div className="absolute -left-[9999px] w-[1px] h-[1px]" aria-hidden="true">
-                  <iframe
-                    key={`${currentTrack.id}-${isPlaying ? 'play' : 'pause'}`}
-                    src={youtubeEmbedSrc}
-                    title={currentTrack.title}
-                    allow="autoplay; encrypted-media"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen={false}
-                    loading="lazy"
-                  />
-                </div>
-              ) : null
+              <div className="mt-4">
+                <iframe
+                  src={trackUrl}
+                  width="100%"
+                  height="200"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen={false}
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
             ) : (
               <audio
                 ref={audioRef}
