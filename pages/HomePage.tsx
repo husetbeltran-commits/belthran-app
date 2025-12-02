@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { SONGS, PRAYERS, ARTICLES } from '../data/mockData';
@@ -23,20 +23,64 @@ const HomePage: React.FC = () => {
 
   // --- Dagens Ord State ---
   // Initialize with the deterministic daily verse
-  const [currentVerse, setCurrentVerse] = useState<BibleVerse>(() => getDailyVerse());
-  const [reflection, setReflection] = useState<string>(() => generateReflection(getDailyVerse()));
+  const initialVerse = getDailyVerse();
+  const [currentVerse, setCurrentVerse] = useState<BibleVerse>(() => initialVerse);
+  const [reflection, setReflection] = useState<string>(() => generateReflection(initialVerse));
   const [isRandomizing, setIsRandomizing] = useState(false);
+  const [animatedReference, setAnimatedReference] = useState<string | null>(null);
+  const [animatedText, setAnimatedText] = useState<string | null>(null);
+
+  const scrambleIntervalRef = useRef<number | null>(null);
+
+  const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖabcdefghijklmnopqrstuvwxyzåäö';
+
+  function scrambleString(original: string): string {
+    return original
+      .split('')
+      .map((char) => {
+        if (char.trim() === '') return char; // keep spaces
+        if ('.,:;!?-–()'.includes(char)) return char; // keep punctuation
+        return CHARS[Math.floor(Math.random() * CHARS.length)];
+      })
+      .join('');
+  }
 
   const handleRandomizeVerse = () => {
+    if (isRandomizing) return;
+
     setIsRandomizing(true);
-    // Simulate a small delay for "AI thinking" or data fetching feel
+    const nextVerse = getRandomVerse();
+
+    if (scrambleIntervalRef.current) {
+      clearInterval(scrambleIntervalRef.current);
+    }
+
+    scrambleIntervalRef.current = window.setInterval(() => {
+      setAnimatedReference(scrambleString(nextVerse.reference));
+      setAnimatedText(scrambleString(nextVerse.text));
+    }, 50);
+
     setTimeout(() => {
-      const newVerse = getRandomVerse();
-      setCurrentVerse(newVerse);
-      setReflection(generateReflection(newVerse));
+      if (scrambleIntervalRef.current) {
+        clearInterval(scrambleIntervalRef.current);
+        scrambleIntervalRef.current = null;
+      }
+
+      setAnimatedReference(null);
+      setAnimatedText(null);
+      setCurrentVerse(nextVerse);
+      setReflection(generateReflection(nextVerse));
       setIsRandomizing(false);
-    }, 400);
+    }, 700);
   };
+
+  useEffect(() => {
+    return () => {
+      if (scrambleIntervalRef.current) {
+        clearInterval(scrambleIntervalRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className="animate-fade-in">
@@ -102,11 +146,11 @@ const HomePage: React.FC = () => {
               {/* Verse & Reference */}
               <div>
                 <p className="font-serif italic text-lg leading-relaxed text-primary text-center mb-3">
-                  "{currentVerse.text}"
+                  "{isRandomizing && animatedText ? animatedText : currentVerse.text}"
                 </p>
                 <div className="flex justify-end">
                    <p className="text-sm font-bold text-accent">
-                     {currentVerse.reference}
+                     {isRandomizing && animatedReference ? animatedReference : currentVerse.reference}
                    </p>
                 </div>
               </div>
@@ -130,13 +174,13 @@ const HomePage: React.FC = () => {
               </div>
 
               {/* Action Button */}
-              <button 
+              <button
                 onClick={handleRandomizeVerse}
                 disabled={isRandomizing}
-                className="w-full bg-accent hover:bg-accent-hover active:scale-[0.98] text-white font-bold py-3.5 px-4 rounded-full flex items-center justify-center gap-2 transition-all shadow-md"
+                className="w-full bg-accent hover:bg-accent-hover active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed text-white font-bold py-3.5 px-4 rounded-full flex items-center justify-center gap-2 transition-all shadow-md"
               >
                 <RefreshCw size={18} className={isRandomizing ? 'animate-spin' : ''} />
-                <span>Slumpa en vers</span>
+                <span>{isRandomizing ? 'Slumpar...' : 'Slumpa en vers'}</span>
               </button>
 
             </div>
