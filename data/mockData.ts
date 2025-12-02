@@ -138,6 +138,37 @@ mer, Jesus, dig lik.`,
     createdAt: '2023-10-10T09:00:00Z',
     youtubeUrl: 'https://www.youtube.com/embed/J3Q08XIpG-o?si=q2DqKj4u0ZgTOkz1',
     imageUrl: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=600&auto=format&fit=crop'
+  },
+  {
+    id: '5',
+    title: 'Gemenskap – Jesus, namnet över alla namn',
+    lyrics: `Jesus namnet över alla namn
+Jesus i Honom räddningen jag fann
+Jesus namnet över alla namn
+Jesus i Honom räddningen jag fann
+
+Prisa Jesus prisa Jesus namnet Jesus
+Lyft upp Hans namn lyft upp Hans namn
+Igen och igen
+
+Jesus varje knä ska böja sig
+Jesus tronar i all evighet
+Jesus världens ljus nationers hopp
+Jesus hans rättfärdighet vi fått
+
+Prisa Jesus prisa Jesus namnet Jesus
+Lyft upp Hans namn lyft upp Hans namn
+Prisa Jesus prisa Jesus namnet Jesus
+Lyft upp Hans namn lyft upp Hans namn
+Igen och igen
+
+Värdig värdig värdig är Han som har all makt
+Värdig värdig värdig är Han som kommer igen`,
+    categories: ['Lovsång', 'Andakt'],
+    tags: ['Jesus', 'Tillbedjan', 'Gemenskap'],
+    createdAt: '2024-05-20T14:00:00Z',
+    youtubeUrl: 'https://www.youtube.com/embed/yHwBwt4rYyQ?si=VC1s8rexMwad64t0',
+    imageUrl: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=600&auto=format&fit=crop'
   }
 ];
 
