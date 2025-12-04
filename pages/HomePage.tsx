@@ -4,8 +4,31 @@ import Header from '../components/Header';
 import { SONGS, PRAYERS, ARTICLES } from '../data/mockData';
 import { ArrowRight, Music, BookOpen, FileText, RefreshCw, Sparkles } from 'lucide-react';
 import { getDailyVerse, getRandomVerse, getBookCategory, generateReflection } from '../utils/bibleHelpers';
-import { BibleVerse } from '../types';
+import { Article, BibleVerse, Prayer, Song } from '../types';
 import { getOrderedContent } from '../utils/dateHelpers';
+
+const FALLBACK_IMAGES = {
+  article: 'https://images.unsplash.com/photo-1473181488821-2d23949a045a?q=80&w=800&auto=format&fit=crop',
+  prayer: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800&auto=format&fit=crop',
+  song: 'https://images.unsplash.com/photo-1435224654926-ecc9f7fa028c?q=80&w=800&auto=format&fit=crop',
+};
+
+const getCoverImage = (item: Article | Prayer | Song | undefined, type: keyof typeof FALLBACK_IMAGES) => {
+  if (!item) return FALLBACK_IMAGES[type];
+
+  const candidates = [
+    (item as any).imageUrl,
+    (item as any).mainImageUrl,
+    (item as any).coverImageUrl,
+    (item as any).coverImage,
+    (item as any).thumbnailUrl,
+    (item as any).heroImageUrl,
+  ];
+
+  const validCandidate = candidates.find((src) => typeof src === 'string' && src.trim().length > 0);
+
+  return validCandidate || FALLBACK_IMAGES[type];
+};
 
 const HomePage: React.FC = () => {
   // --- Data Preparation ---
@@ -14,9 +37,24 @@ const HomePage: React.FC = () => {
   const featuredArticle = ARTICLES.find(a => a.featured);
   
   const featuredItems = [
-    { type: 'Sång', data: featuredSong, path: `/songs/${featuredSong?.id}`, image: featuredSong?.imageUrl },
-    { type: 'Bön', data: featuredPrayer, path: `/prayers/${featuredPrayer?.id}`, image: featuredPrayer?.imageUrl },
-    { type: 'Artikel', data: featuredArticle, path: `/articles/${featuredArticle?.id}`, image: featuredArticle?.mainImageUrl },
+    {
+      type: 'Sång',
+      data: featuredSong,
+      path: `/songs/${featuredSong?.id}`,
+      image: getCoverImage(featuredSong, 'song'),
+    },
+    {
+      type: 'Bön',
+      data: featuredPrayer,
+      path: `/prayers/${featuredPrayer?.id}`,
+      image: getCoverImage(featuredPrayer, 'prayer'),
+    },
+    {
+      type: 'Artikel',
+      data: featuredArticle,
+      path: `/articles/${featuredArticle?.id}`,
+      image: getCoverImage(featuredArticle, 'article'),
+    },
   ].filter(item => item.data);
 
   const { latestSong, latestPrayer, latestArticle } = getOrderedContent(ARTICLES, PRAYERS, SONGS);
@@ -108,9 +146,20 @@ const HomePage: React.FC = () => {
                 {/* Background Image with Gradient Overlay */}
                 {item.image ? (
                   <>
-                    <img 
-                      src={item.image} 
-                      alt={item.data?.title} 
+                    <img
+                      src={item.image}
+                      alt={item.data?.title}
+                      onError={(e) => {
+                        const fallback = item.type === 'Artikel'
+                          ? FALLBACK_IMAGES.article
+                          : item.type === 'Bön'
+                            ? FALLBACK_IMAGES.prayer
+                            : FALLBACK_IMAGES.song;
+
+                        if (e.currentTarget.src !== fallback) {
+                          e.currentTarget.src = fallback;
+                        }
+                      }}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -204,19 +253,38 @@ const HomePage: React.FC = () => {
               { label: 'Senaste bön', item: latestPrayer, path: `/prayers/${latestPrayer.id}` },
               { label: 'Senaste sång', item: latestSong, path: `/songs/${latestSong.id}` },
             ].map((row, idx) => {
-              const image = (row.item as any).imageUrl ?? (row.item as any).mainImageUrl;
+              const image = getCoverImage(
+                row.item as Article | Prayer | Song | undefined,
+                row.label.includes('artikel') ? 'article' : row.label.includes('bön') ? 'prayer' : 'song'
+              );
 
               return (
                 <Link key={idx} to={row.path} className="flex items-center gap-3 bg-surface p-2.5 rounded-xl border border-border hover:bg-hover transition-all group">
                   {/* Thumbnail */}
                   <div className="w-14 h-14 rounded-lg overflow-hidden shrink-0 bg-surface-variant border border-border">
-                  {image ? (
-                     <img src={image} alt="" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center text-secondary">
-                      <FileText size={20} />
-                    </div>
-                  )}
+                    {image ? (
+                      <img
+                        src={image}
+                        alt={`${row.label} – ${row.item.title}`}
+                        onError={(e) => {
+                          // Ensures broken image URLs gracefully fall back per content type
+                          const fallback = row.label.includes('artikel')
+                            ? FALLBACK_IMAGES.article
+                            : row.label.includes('bön')
+                              ? FALLBACK_IMAGES.prayer
+                              : FALLBACK_IMAGES.song;
+
+                          if (e.currentTarget.src !== fallback) {
+                            e.currentTarget.src = fallback;
+                          }
+                        }}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-secondary">
+                        <FileText size={20} />
+                      </div>
+                    )}
                   </div>
                 
                 {/* Text */}
