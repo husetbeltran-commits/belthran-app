@@ -4,7 +4,23 @@ import Header from '../components/Header';
 import { BLESSINGS } from '../data/mockData';
 import { ChevronLeft, Music2, Youtube, Sparkles } from 'lucide-react';
 import { isYouTubeEmbedUrl } from '../utils/mediaHelpers';
+import { stripLeadingH1 } from '../utils/textHelpers';
 import ReactMarkdown from 'react-markdown';
+
+const markdownComponents = {
+  h1: ({ children }: { children: React.ReactNode }) => (
+    <h2 className="text-xl font-bold text-primary mt-6 mb-2 leading-tight">{children}</h2>
+  ),
+  h2: ({ children }: { children: React.ReactNode }) => (
+    <h3 className="text-lg font-semibold text-primary mt-5 mb-2 leading-snug">{children}</h3>
+  ),
+  h3: ({ children }: { children: React.ReactNode }) => (
+    <p className="text-base font-semibold text-primary mt-4 mb-1 leading-relaxed">{children}</p>
+  ),
+  h4: ({ children }: { children: React.ReactNode }) => (
+    <p className="text-base font-medium text-primary mt-3 mb-1 leading-relaxed">{children}</p>
+  ),
+};
 
 const BlessingDetailPage: React.FC = () => {
   const { id } = useParams();
@@ -16,8 +32,10 @@ const BlessingDetailPage: React.FC = () => {
 
   const hasTracks = blessing?.tracks && blessing.tracks.length > 0;
   const currentTrack = hasTracks ? blessing?.tracks?.[currentTrackIndex] : null;
-  const trackUrl = currentTrack?.audioUrl;
+  const trackUrl = currentTrack?.youtubeUrl || currentTrack?.audioUrl;
   const isYouTubeTrack = trackUrl ? isYouTubeEmbedUrl(trackUrl) : false;
+
+  const sanitizedBody = stripLeadingH1(blessing?.body || '');
 
   if (!blessing) return <div className="p-8 text-center text-primary">Välsignelsen hittades inte.</div>;
 
@@ -107,7 +125,7 @@ const BlessingDetailPage: React.FC = () => {
       <div className="p-6 max-w-2xl mx-auto">
         {/* Blessing content uses the same markdown rendering pattern as articles */}
         <div className="prose dark:prose-invert prose-lg prose-headings:text-primary prose-p:text-primary max-w-none">
-          <ReactMarkdown>{blessing.body}</ReactMarkdown>
+          <ReactMarkdown components={markdownComponents}>{sanitizedBody}</ReactMarkdown>
         </div>
       </div>
     </div>

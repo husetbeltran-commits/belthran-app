@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { BLESSINGS } from '../data/mockData';
 import { ChevronLeft, Search, Sparkles } from 'lucide-react';
+import { buildTeaser } from '../utils/textHelpers';
 
 const BlessingsPage: React.FC = () => {
   const [search, setSearch] = useState('');
@@ -15,12 +16,6 @@ const BlessingsPage: React.FC = () => {
     const matchCat = selectedCat ? b.categories.includes(selectedCat) : true;
     return matchSearch && matchCat;
   });
-
-  const getExcerpt = (text: string) =>
-    text
-      .replace(/[#!>*_`\[\]-]+/g, '')
-      .trim()
-      .substring(0, 140);
 
   return (
     <div className="animate-fade-in min-h-screen">
@@ -76,7 +71,7 @@ const BlessingsPage: React.FC = () => {
                 <div className="text-accent"><Sparkles size={16} /></div>
               </div>
               <p className="text-sm text-secondary mb-3 line-clamp-2 italic font-serif">
-                {getExcerpt(blessing.body)}...
+                {buildTeaser(blessing.body)}
               </p>
               <div className="flex gap-2 flex-wrap">
                 {blessing.categories.map(c => (
