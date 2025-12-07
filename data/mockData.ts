@@ -534,24 +534,126 @@ alla ni som hoppas på Herren!`,
 export const BLESSINGS: Blessing[] = [
   {
     id: 'b1',
-    title: 'Tala liv och ljus',
-    subtitle: 'En morgonproklamation för att bära frid in i dagen.',
-    body: `Jag talar liv, ljus och hopp över den här dagen.
-Jag väljer Guds väg och tar emot hans närvaro.
-Hans kärlek fyller mig, hans vishet leder mig,
-och hans frid bevarar mitt hjärta.
+    title: 'Stå fast med Guds styrka',
+    body: `# **Stå fast med Guds styrka**
 
-Jag förklarar att jag är buren av nåd,
-att jag får kraft att älska och tjäna,
-och att jag får se Guds godhet i varje steg.
+## **Syfte**
+Att stärka dig mentalt och andligt så du kan stå fast, hitta inre stabilitet och återta fokus och frid mitt i press och stress.
 
-I Jesu namn. Amen.`,
-    categories: ['Daglig välsignelse', 'Identitet i Kristus'],
-    tags: ['Proklamation', 'Morgon'],
+## **Instruktion**
+Läs texten nedan noga. Den har kraft att bygga upp dig och ge dig styrka.
+Låt orden forma ditt hjärta och påminna dig om vem Gud är — och vem du är i Kristus.
+
+---
+
+## **1. Starta med att rusta dig med Bibelns mentala ”svärd”**
+*Läs dessa verser långsamt och låt dem sjunka in i dig:*
+
+### **Psalm 144:1–2**
+*”Lovad vare Herren, min klippa, som lär mina händer att strida och mina armar att kämpa.
+Gud är min nåd och min borg, mitt fasta värn och min räddare, min sköld; honom tar jag min tillflykt till.”*
+
+### **Jesaja 41:10**
+*”Frukta inte, för jag är med dig, var inte förskräckt, för jag är din Gud.
+Jag styrker dig, jag hjälper dig, jag uppehåller dig med min rättfärdighets högra hand.”*
+
+### **Efesierbrevet 1:19–20**
+*”Vad mäktig hans styrka är för oss som tror — samma kraft som han med sin makt lät verka i Kristus när han uppväckte honom från de döda och satte honom på sin högra sida i himlen.”*
+
+---
+
+## **2. Din andliga verklighet**
+**Läs detta högt för dig själv:**
+
+* Jag är buren av Guds klippa som aldrig vacklar.
+* Jag är tränad av Herren att stå i livets press.
+* Jag är trygg i Kristus, även när känslorna stormar.
+* Jag är älskad, bevarad och rustad av Gud.
+* Jag är en som går framåt — inte tillbaka.
+
+---
+
+## **3. Visualisera – se det framför dig**
+Föreställ dig att du går genom en vanlig dag: skola, jobb, gruppchattar, tunnelbanans brus.
+Trycket i bröstet, oron, stressen och modlösheten vill komma krypande.
+
+Du stannar.
+Under dina fötter känner du något fast, orubbligt och tryggt.
+
+**Det är klippan.**
+**Det är Gud.**
+
+Bredvid dig står Kristus…  
+Han lägger sin hand på din axel och säger:  
+*“Jag tränar ditt inre. Jag ger dig frid mitt i allt.”*
+
+Ljuset från honom fyller dig med ro.  
+Du vet att du står tryggt. Du vet att du inte går ensam.
+
+---
+
+## **4. Omprogrammera dig och förändra din situation**
+**Läs med beslutsamhet — detta är Guds välsignelse över ditt liv:**
+
+Herre, min klippa, jag talar ut att min styrka kommer från dig.  
+Du tränar mitt hjärta att stå fast, mina tankar att vila i ro och min själ att hitta fokus och mod genom din kraft.
+
+Samma kraft som uppväckte dig från de döda är verksam i mig och ger mig kraft att fortsätta.
+
+När oro knackar — du är min sköld.  
+När stress pressar — du är min borg.  
+När jag är svag — du är min styrka.
+
+Jesus, min Herre, låt ditt ord vara mitt svärd, din närvaro min trygghet och ditt hjärta min vila.
+
+Du ska överraska mig med dina välsignelser.  
+Jag vandrar i dina välsignelser.
+
+Du tar min kamp.  
+Du öppnar havet framför mig.  
+Du för mig igenom.
+
+Jag är redo, Herre — för dagen, för natten, för vandringen.  
+Amen.
+
+---
+
+## **5. Bygg dig själv – tala liv till din själ**
+*Läs dessa högt för dig själv tills du tror dem:*
+
+* Herren tränar mitt hjärta att stå fast och min själ att vila i hans frid.
+* Guds kraft verkar i mig — samma kraft som uppväckte Jesus från de döda.
+* När oro knackar är Herren min sköld och mitt skydd.
+* När stress pressar bär Gud mig och är min starka borg.
+* Jesus är min tillflykt, min styrka och min seger — jag vilar i hans närvaro.
+* Gud går före mig, tar min kamp och öppnar havet framför mig.
+* Jag tillhör min Gud, han välsignar mig i Jesus och jag litar på hans godhet över mitt liv.
+
+---
+
+## **6. Slutbön**
+Herre, tack för att du omsluter mig med din trofasthet.
+Tack att du stärker mina tankar, lugnar mitt hjärta och leder mina steg.
+
+När jag möter press — tala din sanning till mig.  
+När jag möter oro — bär mig med din kraft.  
+När jag möter förvirring — lys med ditt ljus.
+
+Jag tillhör dig, Herre.  
+Forma mitt inre, ge mig din frid, fyll mig med din kraft.  
+Amen.
+
+---`,
+    categories: ['Kamp & befrielse', 'Inre styrka'],
     createdAt: '2024-12-28T07:00:00Z',
     featured: true,
     tracks: [
-      { id: 't1', title: 'Still instrumental', audioUrl: 'https://www.youtube.com/embed/MvgXy-VFfxM?si=wMQQy6HvJX0Mcxw2' }
+      {
+        id: 'track1',
+        title: 'Instrumental bakgrund',
+        youtubeUrl: 'https://www.youtube.com/embed/oQMJBz5bcbg?si=L3N3mB8KktYyxtR5',
+        audioUrl: 'https://www.youtube.com/embed/oQMJBz5bcbg?si=L3N3mB8KktYyxtR5'
+      }
     ],
     imageUrl: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=600&auto=format&fit=crop'
   },
