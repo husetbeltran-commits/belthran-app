@@ -6,6 +6,7 @@ import { ArrowRight, Music, BookOpen, FileText, RefreshCw, Sparkles } from 'luci
 import { getDailyVerse, getRandomVerse, getBookCategory, generateReflection } from '../utils/bibleHelpers';
 import { Article, BibleVerse, Blessing, Prayer, Song } from '../types';
 import { getOrderedContent } from '../utils/dateHelpers';
+import { buildTeaser } from '../utils/textHelpers';
 
 const FALLBACK_IMAGES = {
   article: 'https://images.unsplash.com/photo-1473181488821-2d23949a045a?q=80&w=800&auto=format&fit=crop',
@@ -135,7 +136,7 @@ const HomePage: React.FC = () => {
 
   const getPreviewText = (item: Article | Prayer | Song | Blessing) => {
     const content = (item as any).body || (item as any).lyrics || '';
-    return content ? `${content.substring(0, 80)}...` : '';
+    return buildTeaser(content, 150);
   };
 
   return (
@@ -190,7 +191,7 @@ const HomePage: React.FC = () => {
                     {item.data?.title}
                   </h3>
                   <p className="text-xs text-gray-300 line-clamp-1 opacity-90">
-                     {(item.data as any).body?.substring(0, 50) || (item.data as any).lyrics?.substring(0, 50)}...
+                     {getPreviewText(item.data as any)}
                   </p>
                 </div>
               </Link>
