@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import { BLESSINGS } from '../data/mockData';
 import { ChevronLeft, Music2, Youtube, Sparkles } from 'lucide-react';
 import { isYouTubeEmbedUrl } from '../utils/mediaHelpers';
+import ReactMarkdown from 'react-markdown';
 
 const BlessingDetailPage: React.FC = () => {
   const { id } = useParams();
@@ -104,10 +105,9 @@ const BlessingDetailPage: React.FC = () => {
 
       {/* TEXT CONTENT */}
       <div className="p-6 max-w-2xl mx-auto">
-        <div className="prose dark:prose-invert prose-lg prose-headings:text-primary prose-p:text-primary">
-          <p className="whitespace-pre-wrap font-serif text-xl leading-relaxed">
-            {blessing.body}
-          </p>
+        {/* Blessing content uses the same markdown rendering pattern as articles */}
+        <div className="prose dark:prose-invert prose-lg prose-headings:text-primary prose-p:text-primary max-w-none">
+          <ReactMarkdown>{blessing.body}</ReactMarkdown>
         </div>
       </div>
     </div>

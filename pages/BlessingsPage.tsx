@@ -16,6 +16,12 @@ const BlessingsPage: React.FC = () => {
     return matchSearch && matchCat;
   });
 
+  const getExcerpt = (text: string) =>
+    text
+      .replace(/[#!>*_`\[\]-]+/g, '')
+      .trim()
+      .substring(0, 140);
+
   return (
     <div className="animate-fade-in min-h-screen">
       <Header
@@ -70,7 +76,7 @@ const BlessingsPage: React.FC = () => {
                 <div className="text-accent"><Sparkles size={16} /></div>
               </div>
               <p className="text-sm text-secondary mb-3 line-clamp-2 italic font-serif">
-                {blessing.body}
+                {getExcerpt(blessing.body)}...
               </p>
               <div className="flex gap-2 flex-wrap">
                 {blessing.categories.map(c => (
