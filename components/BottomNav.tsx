@@ -2,18 +2,14 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Grid, Search, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
-import FigTreeIconSolid from './icons/FigTreeIconSolid';
-import FigTreeIconOutline from './icons/FigTreeIconOutline';
 
 const BottomNav: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
 
   const navItems = [
-    { 
-      label: 'Hem', 
-      path: '/', 
-      // Dynamically select icon based on theme
-      Icon: theme === 'light' ? FigTreeIconSolid : FigTreeIconOutline 
+    {
+      label: 'Hem',
+      path: '/',
     },
     { label: 'Verktyg', path: '/tools', Icon: Grid },
     { label: 'Sök', path: '/search', Icon: Search },
@@ -34,7 +30,7 @@ const BottomNav: React.FC = () => {
               }`
             }
           >
-            <item.Icon className="w-6 h-6" strokeWidth={2} />
+            {item.Icon ? <item.Icon className="w-6 h-6" strokeWidth={2} /> : null}
             <span className="text-[10px] font-medium tracking-wide">{item.label}</span>
           </NavLink>
         ))}
