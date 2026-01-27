@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Grid, Search, Sun, Moon } from 'lucide-react';
+import { Grid, Search, Sun, Moon, Home } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
 const BottomNav: React.FC = () => {
@@ -10,6 +10,7 @@ const BottomNav: React.FC = () => {
     {
       label: 'Hem',
       path: '/',
+      Icon: Home,
     },
     { label: 'Verktyg', path: '/tools', Icon: Grid },
     { label: 'Sök', path: '/search', Icon: Search },
