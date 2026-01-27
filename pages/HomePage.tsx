@@ -330,7 +330,7 @@ const HomePage: React.FC = () => {
           </div>
           <div className="grid grid-cols-2 gap-3">
             <ToolCard to="/songs" title="Sångbank" icon={Music} desc="Hitta sånger" />
-            <ToolCard to="/prayers" title="Bön" icon={BookOpen} desc="Meditationer" />
+            <ToolCard to="/prayers" title="Mental träning" icon={BookOpen} desc="Fokus, riktning och målbild" />
             <ToolCard to="/blessings" title="Tala välsignelser" icon={Sparkles} desc="Guds kraft i ditt liv" />
             <ToolCard to="/articles" title="Artiklar" icon={FileText} desc="Läs om tro" />
           </div>

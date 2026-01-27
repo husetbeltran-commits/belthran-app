@@ -12,8 +12,8 @@ const ToolsPage: React.FC = () => {
       path: '/songs' 
     },
     {
-      title: 'Bön och meditation',
-      desc: 'Utforska böner och kristna meditationer.',
+      title: 'Mental träning',
+      desc: 'Guidad mental träning för fokus, mål och inre disciplin.',
       icon: BookOpen,
       path: '/prayers'
     },

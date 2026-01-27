@@ -19,7 +19,7 @@ const PrayersPage: React.FC = () => {
   return (
     <div className="animate-fade-in min-h-screen">
       <Header 
-        title="Bön och meditation" 
+        title="Mental träning" 
         backButton={<Link to="/" className="text-secondary hover:text-primary"><ChevronLeft /></Link>}
       />
       
@@ -29,7 +29,7 @@ const PrayersPage: React.FC = () => {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-secondary" size={18} />
           <input 
             type="text" 
-            placeholder="Sök bön..." 
+            placeholder="Sök mental träning..." 
             className="w-full bg-surface border border-border rounded-lg pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-accent text-primary placeholder-secondary/50"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
