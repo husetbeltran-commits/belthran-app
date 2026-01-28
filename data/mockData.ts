@@ -553,22 +553,6 @@ When you are ready, open your eyes.`,
     imageUrl: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=600&auto=format&fit=crop' // Calm lake/morning mist
   },
   {
-    id: '2',
-    title: 'Aftonbön',
-    body: `Gud, tack för denna dag som gått.
-Tack för allt jag fått uppleva, både glädje och utmaningar.
-Förlåt mig där jag brustit i kärlek till dig och min nästa.
-Jag lämnar nu allt i dina händer.
-Bevara mig och mina kära under natten.
-Låt mig vila i din frid.
-I Jesu namn, Amen.`,
-    categories: ['Dagliga böner', 'Tyst stund'],
-    tags: ['Kväll', 'Vila'],
-    createdAt: '2023-09-01T21:10:00Z',
-    tracks: [],
-    imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop' // Sunset/Calm
-  },
-  {
     id: '3',
     title: 'The Person You Must Become',
     body: `ARRIVAL
@@ -842,58 +826,6 @@ When you are ready, open your eyes.`,
     imageUrl: 'https://images.unsplash.com/photo-1504194921103-f8b80cadd5e4?q=80&w=600&auto=format&fit=crop' // Abstract/Light
   },
   {
-    id: '4',
-    title: 'Bön att tala välsignelser över ditt liv',
-    body: `Herre,
- jag kommer inför dig med ett hjärta fyllt av tacksamhet och lovsång.
- Jag prisar ditt heliga namn,
- för du är Skaparen av allt.
-
-Du talade universum till existens  
- och du skapade mig till din avbild.  
- Jag är förundrad över din makt,  
- och jag tackar dig för allt du har gjort för mig.
-
-Jag ber att mina ord från och med i dag  
- ska vara fyllda av välsignelse och godhet.  
- Låt mig tala liv in i varje situation,  
- se det goda i andra  
- och sprida kärlek och vänlighet vart jag än går.
-
-Hjälp mig att använda mina ord för att lyfta andra,  
- ge hopp och bringa helande,  
- och låta ditt ljus lysa genom mig.
-
-Jag talar ditt välbehag över mitt liv,  
- för jag vet att du är en Gud av överflöd och välsignelse.  
-Jag bekänner framgång och god hälsa över min familj,  
- och jag litar på ditt beskydd.
-
-Jag talar positivitet över min arbetsplats  
- och tror att du har stora saker för mig framöver.
-
-Herre, ta bort allt negativt tal från min mun.  
- Hjälp mig att tänka före jag talar,  
- och att använda min röst till det som är gott.  
-Låt mina ord spegla din kärlek och nåd.
-
-Jag lyfter upp denna bön till dig i Jesu namn  
- och tackar dig för din trofasthet  
- och alla de välsignelser du gett mig.  
- Jag ger dig all ära.  
-Amen.`,
-    categories: ['Dagliga böner', 'Välsignelse'],
-    tags: ['Välsignelse', 'Tacksamhet', 'Ordets kraft'],
-    createdAt: '2024-12-20T09:00:00Z',
-    featured: false,
-    tracks: [
-      { id: 't1', title: 'Oceans (instrumental)', audioUrl: 'https://www.youtube.com/embed/eLqTZ07ja7g?si=J6s9zt6y_5G5OVdl' },
-      { id: 't2', title: 'You Say', audioUrl: 'https://www.youtube.com/embed/ihrUIPfvTh8?si=S2rT4hnD32bfBxgn' },
-      { id: 't3', title: 'Baptize Me With Fire', audioUrl: 'https://www.youtube.com/embed/DjVSEFIc_yA?si=K365xKQh9XO1MKPS' }
-    ],
-    imageUrl: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=600&auto=format&fit=crop' // Light rays/hopeful
-  },
-  {
     id: '5',
     title: 'Mitt hjärta i stormen (Psalm 31)',
     subtitle: 'En omskriven och förenklad version av Psalm 31 (SFB15), skapad för att hjälpa dig att be när natten känns tung och tankarna rusar.',
@@ -1010,7 +942,7 @@ straffar han strängt.
 
 25 Var starka och modiga i era hjärtan,
 alla ni som hoppas på Herren!`,
-    categories: ['02–04 på natten', 'I stormen', 'Motarbetad och bortglömd'],
+    categories: ['02–04 på natten', 'I stormen'],
     tags: ['Nattbön', 'Storm', 'Psalm 31'],
     createdAt: '2025-02-15T02:30:00Z',
     tracks: [
