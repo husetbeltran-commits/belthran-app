@@ -347,22 +347,6 @@ When you are ready, open your eyes.`,
     imageUrl: 'https://images.unsplash.com/photo-1518176258769-f227c798150e?q=80&w=600&auto=format&fit=crop' // Calming water/stones
   },
   {
-    id: '2',
-    title: 'Aftonbön',
-    body: `Gud, tack för denna dag som gått.
-Tack för allt jag fått uppleva, både glädje och utmaningar.
-Förlåt mig där jag brustit i kärlek till dig och min nästa.
-Jag lämnar nu allt i dina händer.
-Bevara mig och mina kära under natten.
-Låt mig vila i din frid.
-I Jesu namn, Amen.`,
-    categories: ['Dagliga böner', 'Tyst stund'],
-    tags: ['Kväll', 'Vila'],
-    createdAt: '2023-09-01T21:10:00Z',
-    tracks: [],
-    imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop' // Sunset/Calm
-  },
-  {
     id: '3',
     title: 'The Person You Must Become',
     body: `ARRIVAL
