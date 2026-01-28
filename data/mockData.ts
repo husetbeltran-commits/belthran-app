@@ -842,6 +842,191 @@ When you are ready, open your eyes.`,
     imageUrl: 'https://images.unsplash.com/photo-1504194921103-f8b80cadd5e4?q=80&w=600&auto=format&fit=crop' // Abstract/Light
   },
   {
+    id: '6',
+    title: 'The One Who Holds the Wolf',
+    body: `SETTLING THE BODY
+
+Sit comfortably.
+Let your feet make contact with the ground.
+Let your back be supported.
+
+Take one slow breath in through the nose,
+and a longer breath out through the mouth.
+
+You don’t need to relax.
+You only need to arrive.
+
+(pause)
+
+Feel the weight of your body.
+Notice where you are supported.
+Let the ground do its job.
+
+
+MEETING THE STABILIZER
+
+Now bring to mind the part of you that wants rhythm, sleep, and grounded mornings.
+The part that wants to wake up clear.
+Focused.
+Able to work and live from strength rather than recovery.
+
+(pause)
+
+Notice how this part feels in the body.
+Where is it located?
+What posture does it have?
+
+Don’t judge — just observe.
+
+(pause)
+
+This part is not rigid.
+It is steady.
+It values continuity.
+It wants to carry your life forward.
+
+
+MEETING THE WOLF
+
+Now allow the other part to appear.
+The one you called the wolf.
+
+The part that loves movement, desire, intensity, being seen.
+The part that feels most alive in the moment.
+
+(pause)
+
+Let it appear however it wants.
+As an image, a sensation, an energy, or just a knowing.
+
+(pause)
+
+Notice:
+This part is not wrong.
+It carries life force.
+Appetite.
+Vitality.
+
+
+LETTING BOTH BE PRESENT
+
+Now notice something important.
+
+You can sense both parts at the same time.
+The stabilizer.
+And the wolf.
+
+(pause)
+
+They do not cancel each other out.
+They are both inside you —
+and neither of them is the whole of you.
+
+(pause)
+
+There is a larger awareness here.
+The one that sees both.
+
+
+STEPPING INTO AUTHORITY
+
+Now imagine yourself standing —
+not as either part —
+but as the one who holds them.
+
+The one who is responsible for the whole life.
+
+(pause)
+
+From this place, turn first to the stabilizer.
+Acknowledge it.
+Thank it for protecting your future,
+your health,
+your continuity.
+
+(pause)
+
+Then turn to the wolf.
+Acknowledge it too.
+Thank it for carrying vitality,
+desire,
+and aliveness.
+
+(pause)
+
+Now say — silently or out loud:
+
+“You both belong here.
+But neither of you leads alone.”
+
+(pause)
+
+
+CONTAINMENT WITHOUT SUPPRESSION
+
+Imagine the wolf now —
+not locked away,
+not killed —
+but contained.
+
+Like a powerful animal
+that trusts the one holding the reins.
+
+(pause)
+
+The wolf does not disappear.
+It waits.
+It moves when invited.
+It does not decide the direction.
+
+(pause)
+
+And the stabilizer does not dominate.
+It guides.
+It sets rhythm.
+It protects the whole system.
+
+
+ANCHORING THE NEW IDENTITY
+
+Now feel what it is like to live from this place.
+
+Not choosing between freedom and structure —
+but holding both.
+
+(pause)
+
+Let one sentence form naturally.
+Something like:
+
+“I am the one who decides
+when life moves fast —
+and when it rests.”
+
+Or whatever feels true for you.
+
+(pause)
+
+
+CLOSING
+
+Take one deeper breath in,
+and a slow breath out.
+
+Feel the ground again.
+Feel your body here.
+
+(pause)
+
+This is not something to force.
+It is something to return to.`,
+    categories: ['Mental träning', 'Fokus och riktning'],
+    tags: ['Visualisering', 'Självledarskap', 'Balans'],
+    createdAt: '2025-03-10T08:00:00Z',
+    tracks: [],
+    imageUrl: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=600&auto=format&fit=crop' // Forest/Path
+  },
+  {
     id: '4',
     title: 'Bön att tala välsignelser över ditt liv',
     body: `Herre,
