@@ -66,11 +66,15 @@ const HomePage: React.FC = () => {
   const latestArticle = getLatestByCreatedAt(ARTICLES);
   const latestPrayer = getLatestByCreatedAt(PRAYERS);
   const latestBlessing = getLatestByCreatedAt(BLESSINGS);
-  const toolCards = [
+  const allToolCards = [
     { to: '/prayers', title: 'Mental träning', icon: Brain, desc: 'Fokus, riktning och målbild' },
     { to: '/blessings', title: 'Tala välsignelser', icon: Sparkles, desc: 'Guds kraft i ditt liv' },
     { to: '/articles', title: 'Artiklar', icon: FileText, desc: 'Läs om tro' },
-  ].filter((tool) => !isToolHidden(tool.title));
+    { to: '/verses', title: 'Slumpa en vers', icon: RefreshCw, desc: 'Dagens bibelord' },
+  ];
+  const toolCards = allToolCards
+    .filter((tool) => !isToolHidden(tool.title))
+    .slice(0, 4);
 
   // --- Dagens Ord State ---
   // Initialize with the deterministic daily verse
