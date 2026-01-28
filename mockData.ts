@@ -70,24 +70,284 @@ Allt annat är som sand`,
 export const PRAYERS: Prayer[] = [
   {
     id: '1',
-    title: 'Sinnesrobönen',
-    body: `Gud, ge mig sinnesro
-att acceptera det jag inte kan förändra,
-mod att förändra det jag kan,
-och förstånd att inse skillnaden.
+    title: 'The Bridge',
+    body: `## Arrival
 
-Låt mig leva en dag i taget,
-et ögonblick i sänder.
-Låt mig ta emot svårigheter som en väg till frid.
-Låt mig, liksom Jesus, ta denna syndiga värld som den är,
-inte som jag skulle önska att den vore.
+Find a comfortable position.  
+Let your body become still, while your mind remains awake.
 
-Låt mig lita på att du gör allting rätt
-om jag överlåter mig till din vilja.
-Så att jag kan bli rimligt lycklig i detta liv
-och fullkomligt lycklig tillsammans med dig i evigheten.
-Amen.`,
-    categories: ['Dagliga böner', 'Bön vid oro'],
+This is not something to perform or solve.  
+It is a space to see and orient.
+
+For the next minutes, allow yourself to follow the images that arise.  
+Nothing needs to be forced.
+
+*Pause.*
+
+---
+
+## Settling
+
+Begin by noticing your breathing.  
+Inhale gently.  
+Exhale fully.
+
+*Pause.*
+
+Let each breath slow you down a little more.  
+Your shoulders soften.  
+Your face relaxes.
+
+*Pause.*
+
+Your attention turns inward.  
+Calm.  
+Clear.  
+Present.
+
+---
+
+## The Overview
+
+Now imagine yourself gently rising above your life.  
+As if you are lifted in a quiet air balloon,  
+slowly gaining height,  
+until you can see your life from above.
+
+*Pause.*
+
+Below you, notice the different areas of your life.  
+Not in detail.  
+Just as landscapes.
+
+Some areas may feel open and alive.  
+Some may feel unclear, unfinished, or distant.
+
+*Pause.*
+
+Notice which areas matter most to you right now.  
+Not what should matter —  
+but what truly draws your attention.
+
+*Pause.*
+
+Simply observe.
+
+---
+
+## The Distance
+
+Now notice that in some areas,  
+there is a distance between where things are today  
+and where you sense they could go.
+
+Picture this distance as a canyon.
+
+*Pause.*
+
+In some places the canyon may be narrow.  
+In others, wide and deep.
+
+*Pause.*
+
+On the other side, notice how things could be.  
+Not perfect.  
+But aligned.
+
+See how that place looks.  
+Sense how it feels to imagine standing there.
+
+*Pause.*
+
+---
+
+## Desire
+
+Now feel your desire to move toward that place.  
+Not as pressure.  
+Not as urgency.  
+But as willingness.
+
+*Pause.*
+
+This desire is not a wish.  
+It is a decision to move in a direction.
+
+Let that decision settle in your body.  
+Quiet.  
+Steady.
+
+*Pause.*
+
+---
+
+## The Bridge — Will and Faith
+
+Now imagine a bridge beginning to form across the canyon.  
+It does not appear all at once.  
+It is built plank by plank.
+
+*Pause.*
+
+The first plank appears because you will it.  
+You decide to move.
+
+*Pause.*
+
+The second plank appears because you do not let go.  
+You stay with your direction.
+
+*Pause.*
+
+The third plank appears because you believe it is possible.  
+Not emotionally —  
+but practically.
+
+*Pause.*
+
+The fourth plank appears as your belief strengthens.  
+You trust that what you aim for can be accomplished.
+
+*Pause.*
+
+The fifth plank appears because you keep your will directed,  
+even when nothing else seems to change.
+
+*Pause.*
+
+*You have reached the middle of the bridge.*
+
+---
+
+## Becoming — Identity and Integrity
+
+The sixth plank appears because you begin to be the right person to continue.
+
+Picture yourself clearly.  
+How you stand.  
+How you move.  
+How your face looks when you are aligned.
+
+*Pause.*
+
+Notice how your body feels.  
+Grounded.  
+Present.
+
+*Pause.*
+
+When this feels real, the plank settles into place.
+
+*Pause.*
+
+The seventh plank appears as you imagine acting with integrity  
+across all areas of your life.  
+Not selectively.  
+Not occasionally.  
+Consistently.
+
+*Pause.*
+
+---
+
+## Capacity — Receiving and Managing
+
+The eighth plank appears as you sense yourself becoming capable  
+of holding what you are moving toward.
+
+Responsibility.  
+Stability.  
+Balance.
+
+*Pause.*
+
+You are not reaching for something beyond you.  
+You are growing into it.
+
+*Pause.*
+
+The ninth plank appears as your will matures.  
+It is no longer forceful.  
+It is steady.
+
+*Pause.*
+
+You no longer ask if you will continue.  
+You simply do.
+
+*Pause.*
+
+The tenth plank appears as you accept that you can receive  
+what you are aiming for —  
+and manage it well.
+
+*Pause.*
+
+The bridge is now complete.
+
+---
+
+## Will — Crossing
+
+Now look toward the other side.
+
+Feel your will gather in your body.  
+Not tension.  
+Not force.  
+Resolve.
+
+*Pause.*
+
+Silently say to yourself:
+
+I am getting there.  
+I am becoming who I need to be.  
+I am moving forward.
+
+*Pause.*
+
+With each repetition, feel your will strengthen.  
+Grounded.  
+Certain.
+
+*Pause.*
+
+---
+
+## Arrival
+
+Now sense yourself standing on the other side.  
+No drama.  
+No celebration.  
+Just arrival.
+
+*Pause.*
+
+Notice how natural it feels to be here.  
+Not because it was easy —  
+but because you became the one who could arrive.
+
+*Pause.*
+
+Let this feeling settle into your body.
+
+---
+
+## Return
+
+Begin to let the images soften.
+
+Bring your attention back to your breathing.  
+To the room around you.
+
+*Pause.*
+
+Carry this sense of direction with you.  
+Not as pressure —  
+but as orientation.
+
+When you are ready, open your eyes.`,
+    categories: ['Mental träning', 'Fokus och riktning'],
     tags: ['Klassisk', 'Trygghet'],
     createdAt: '2023-02-10T07:45:00Z',
     featured: true,
