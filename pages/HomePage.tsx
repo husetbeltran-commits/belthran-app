@@ -7,6 +7,7 @@ import { getDailyVerse, getRandomVerse, getBookCategory, generateReflection } fr
 import { Article, BibleVerse, Blessing, Prayer } from '../types';
 import { getLatestByCreatedAt } from '../utils/dateHelpers';
 import { buildTeaser } from '../utils/textHelpers';
+import { isToolHidden } from '../utils/toolVisibility';
 
 const FALLBACK_IMAGES = {
   article: 'https://images.unsplash.com/photo-1473181488821-2d23949a045a?q=80&w=800&auto=format&fit=crop',
@@ -56,7 +57,11 @@ const HomePage: React.FC = () => {
       path: `/blessings/${featuredBlessing?.id}`,
       image: getCoverImage(featuredBlessing, 'blessing'),
     },
-  ].filter(item => item.data);
+  ].filter((item) => {
+    if (!item.data) return false;
+    if (item.type === 'Välsignelse') return !isToolHidden('Tala välsignelser');
+    return true;
+  });
 
   const latestArticle = getLatestByCreatedAt(ARTICLES);
   const latestPrayer = getLatestByCreatedAt(PRAYERS);
@@ -65,7 +70,7 @@ const HomePage: React.FC = () => {
     { to: '/prayers', title: 'Mental träning', icon: Brain, desc: 'Fokus, riktning och målbild' },
     { to: '/blessings', title: 'Tala välsignelser', icon: Sparkles, desc: 'Guds kraft i ditt liv' },
     { to: '/articles', title: 'Artiklar', icon: FileText, desc: 'Läs om tro' },
-  ];
+  ].filter((tool) => !isToolHidden(tool.title));
 
   // --- Dagens Ord State ---
   // Initialize with the deterministic daily verse
@@ -244,14 +249,16 @@ const HomePage: React.FC = () => {
               </div>
 
               {/* Action Button */}
-              <button
-                onClick={handleRandomizeVerse}
-                disabled={isRandomizing}
-                className="w-full bg-accent hover:bg-accent-hover active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed text-white font-bold py-3.5 px-4 rounded-full flex items-center justify-center gap-2 transition-all shadow-md"
-              >
-                <RefreshCw size={18} className={isRandomizing ? 'animate-spin' : ''} />
-                <span>{isRandomizing ? 'Slumpar...' : 'Slumpa en vers'}</span>
-              </button>
+              {!isToolHidden('Slumpa en vers') && (
+                <button
+                  onClick={handleRandomizeVerse}
+                  disabled={isRandomizing}
+                  className="w-full bg-accent hover:bg-accent-hover active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed text-white font-bold py-3.5 px-4 rounded-full flex items-center justify-center gap-2 transition-all shadow-md"
+                >
+                  <RefreshCw size={18} className={isRandomizing ? 'animate-spin' : ''} />
+                  <span>{isRandomizing ? 'Slumpar...' : 'Slumpa en vers'}</span>
+                </button>
+              )}
 
             </div>
           </div>
@@ -264,7 +271,7 @@ const HomePage: React.FC = () => {
             {[
               { label: 'Senaste artikel', item: latestArticle, path: `/articles/${latestArticle.id}`, type: 'article' as const },
               { label: 'Senaste bön', item: latestPrayer, path: `/prayers/${latestPrayer.id}`, type: 'prayer' as const },
-              latestBlessing && { label: 'Senaste välsignelse', item: latestBlessing, path: `/blessings/${latestBlessing.id}`, type: 'blessing' as const }, // latest blessing for “Tala välsignelser”-tool
+              !isToolHidden('Tala välsignelser') && latestBlessing && { label: 'Senaste välsignelse', item: latestBlessing, path: `/blessings/${latestBlessing.id}`, type: 'blessing' as const }, // latest blessing for “Tala välsignelser”-tool
             ].filter(Boolean).map((row, idx) => {
               const image = getCoverImage(
                 row.item as Article | Prayer | Blessing | undefined,
