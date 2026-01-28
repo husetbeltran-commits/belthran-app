@@ -36,6 +36,7 @@ const ToolsPage: React.FC = () => {
       path: '/verses' 
     },
   ];
+  const visibleTools = tools.filter((tool) => tool.title !== 'Sångvagnen');
 
   return (
     <div className="animate-fade-in min-h-screen">
@@ -48,7 +49,7 @@ const ToolsPage: React.FC = () => {
         }
       />
       <div className="p-4 grid gap-4">
-        {tools.map((tool) => (
+        {visibleTools.map((tool) => (
           <Link 
             key={tool.path}
             to={tool.path}
