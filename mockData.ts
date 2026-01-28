@@ -364,16 +364,269 @@ I Jesu namn, Amen.`,
   },
   {
     id: '3',
-    title: 'Bön vid ångest',
-    body: `Herre, mitt hjärta är oroligt.
-Tankarna snurrar och jag finner inget fäste.
-Du har sagt att du är min herde och att mig intet skall fattas.
-Hjälp mig att andas in din nåd.
-Hjälp mig att släppa taget om det jag inte kan kontrollera.
-Du är större än min oro.
-Du är här, just nu.
-Jag vilar i dig. Amen.`,
-    categories: ['Bön vid oro', 'Andningsbön'],
+    title: 'The Person You Must Become',
+    body: `ARRIVAL
+
+Find a comfortable position.
+Let your body become still, while your mind remains awake.
+
+This is not a journey outward.
+It is a meeting with yourself.
+
+For the next minutes, allow images to arise naturally.
+Nothing needs to be forced.
+
+(pause)
+
+
+SETTLING
+
+Begin by noticing your breathing.
+Inhale gently.
+Exhale fully.
+
+(pause)
+
+Let the breath slow your body down.
+Your shoulders soften.
+Your chest settles.
+
+(pause)
+
+You are alert.
+Present.
+Here.
+
+
+THE LANDSCAPE
+
+Now imagine yourself standing in a wide, open landscape.
+You are not above it.
+You are in it.
+
+This landscape represents your life as it is now.
+
+(pause)
+
+Look around.
+Notice the ground beneath your feet.
+The colors.
+The atmosphere.
+
+(pause)
+
+Sense what this place feels like to live in.
+Not what you think about it —
+but how it feels.
+
+
+THE CANYON
+
+Now notice that in front of you, the land ends.
+There is a canyon.
+
+(pause)
+
+On this side of the canyon, there is you —
+as you are right now.
+
+(pause)
+
+Across the canyon, there is also you —
+but as the person you need to be.
+
+(pause)
+
+Do not judge either side.
+Just look.
+
+
+SEEING YOURSELF AS YOU ARE
+
+First, turn your attention to yourself on this side.
+See yourself clearly.
+
+(pause)
+
+Notice the colors around you.
+Are they sharp or faded?
+Heavy or light?
+
+(pause)
+
+Notice how you stand.
+Your posture.
+Your expression.
+
+(pause)
+
+Sense how it feels to live from this place.
+Impulses.
+Reactions.
+Moments of wanting without holding.
+
+(pause)
+
+This is not wrong.
+It is simply where you are.
+
+
+SEEING WHO YOU NEED TO BE
+
+Now look across the canyon.
+See yourself on the other side.
+
+(pause)
+
+Notice the difference immediately.
+The colors.
+The clarity.
+The atmosphere.
+
+(pause)
+
+Look at how this version of you stands.
+How he holds himself.
+
+(pause)
+
+Notice his face.
+Calm.
+Present.
+Decided.
+
+(pause)
+
+Sense how it feels to live from that place.
+
+There is structure.
+There is self-command.
+There is steadiness.
+
+(pause)
+
+This person does not rely on feelings to decide.
+He relies on decisions to guide feelings.
+
+
+THE INTENTION TO TRANSFORM
+
+Now feel the desire to become this person.
+Not to get something.
+But to be someone.
+
+(pause)
+
+This desire is not emotional hunger.
+It is resolve.
+
+(pause)
+
+You are not trying to escape who you are.
+You are preparing to grow beyond it.
+
+
+THE BRIDGE OF TRANSFORMATION
+
+Now imagine a bridge forming across the canyon.
+This bridge is not about achievement.
+It is about transformation.
+
+(pause)
+
+There are ten planks.
+Each plank changes something in you.
+
+(pause)
+
+The first plank appears as you choose restraint over impulse.
+The second plank appears as you choose structure over chaos.
+The third plank appears as you choose decision over mood.
+The fourth plank appears as you choose responsibility over avoidance.
+The fifth plank appears as you choose long-term direction over short-term relief.
+
+(pause)
+
+You stop here, in the middle of the bridge.
+This is where faith is rebuilt.
+
+
+BECOMING — THE INNER WORK
+
+From this place, look again at the person on the other side.
+
+Ask yourself quietly:
+What must be reduced in me?
+What must be released?
+What must be allowed to die?
+
+(pause)
+
+Now ask:
+What must grow in me?
+What must be strengthened?
+What must be practiced daily?
+
+(pause)
+
+See certain habits loosening their grip.
+Not through force —
+but through replacement.
+
+(pause)
+
+See new patterns forming.
+Structure.
+Boundaries.
+Self-command.
+
+(pause)
+
+Feel what it is like to live one full day as this person.
+Morning.
+Decisions.
+Spending.
+Actions.
+
+(pause)
+
+Let this version of you govern your days.
+
+
+INTEGRATION
+
+Now imagine stepping fully into this version of yourself.
+Not across the bridge yet —
+but into the identity.
+
+(pause)
+
+Feel how it sits in your body.
+Grounded.
+Clear.
+Steady.
+
+(pause)
+
+This is the person who can carry what you want.
+This is the person who can steward it.
+
+Stay here.
+
+
+RETURN
+
+Let the images soften.
+Bring your attention back to your breath.
+To the room around you.
+
+(pause)
+
+You are not leaving this behind.
+You are carrying it forward.
+
+When you are ready, open your eyes.`,
+    categories: ['Mental träning', 'Fokus och riktning'],
     tags: ['Psykisk hälsa', 'Tröst'],
     createdAt: '2023-11-05T10:05:00Z',
     tracks: [
