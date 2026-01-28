@@ -1,21 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
-import { SONGS, PRAYERS, ARTICLES, BLESSINGS } from '../data/mockData';
-import { ArrowRight, Music, Brain, FileText, RefreshCw, Sparkles } from 'lucide-react';
+import { PRAYERS, ARTICLES, BLESSINGS } from '../data/mockData';
+import { ArrowRight, Brain, FileText, RefreshCw, Sparkles } from 'lucide-react';
 import { getDailyVerse, getRandomVerse, getBookCategory, generateReflection } from '../utils/bibleHelpers';
-import { Article, BibleVerse, Blessing, Prayer, Song } from '../types';
-import { getOrderedContent } from '../utils/dateHelpers';
+import { Article, BibleVerse, Blessing, Prayer } from '../types';
+import { getLatestByCreatedAt } from '../utils/dateHelpers';
 import { buildTeaser } from '../utils/textHelpers';
 
 const FALLBACK_IMAGES = {
   article: 'https://images.unsplash.com/photo-1473181488821-2d23949a045a?q=80&w=800&auto=format&fit=crop',
   prayer: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=800&auto=format&fit=crop',
-  song: 'https://images.unsplash.com/photo-1435224654926-ecc9f7fa028c?q=80&w=800&auto=format&fit=crop',
   blessing: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=800&auto=format&fit=crop',
 };
 
-const getCoverImage = (item: Article | Prayer | Song | Blessing | undefined, type: keyof typeof FALLBACK_IMAGES) => {
+const getCoverImage = (item: Article | Prayer | Blessing | undefined, type: keyof typeof FALLBACK_IMAGES) => {
   if (!item) return FALLBACK_IMAGES[type];
 
   const candidates = [
@@ -34,18 +33,11 @@ const getCoverImage = (item: Article | Prayer | Song | Blessing | undefined, typ
 
 const HomePage: React.FC = () => {
   // --- Data Preparation ---
-  const featuredSong = SONGS.find(s => s.featured);
   const featuredPrayer = PRAYERS.find(p => p.featured);
   const featuredArticle = ARTICLES.find(a => a.featured);
   const featuredBlessing = BLESSINGS.find(b => b.featured);
 
   const featuredItems = [
-    {
-      type: 'Sång',
-      data: featuredSong,
-      path: `/songs/${featuredSong?.id}`,
-      image: getCoverImage(featuredSong, 'song'),
-    },
     {
       type: 'Bön',
       data: featuredPrayer,
@@ -66,13 +58,14 @@ const HomePage: React.FC = () => {
     },
   ].filter(item => item.data);
 
-  const { latestSong, latestPrayer, latestArticle, latestBlessing } = getOrderedContent(ARTICLES, PRAYERS, SONGS, BLESSINGS);
+  const latestArticle = getLatestByCreatedAt(ARTICLES);
+  const latestPrayer = getLatestByCreatedAt(PRAYERS);
+  const latestBlessing = getLatestByCreatedAt(BLESSINGS);
   const toolCards = [
-    { to: '/songs', title: 'Sångbank', icon: Music, desc: 'Hitta sånger' },
     { to: '/prayers', title: 'Mental träning', icon: Brain, desc: 'Fokus, riktning och målbild' },
     { to: '/blessings', title: 'Tala välsignelser', icon: Sparkles, desc: 'Guds kraft i ditt liv' },
     { to: '/articles', title: 'Artiklar', icon: FileText, desc: 'Läs om tro' },
-  ].filter((tool) => tool.title !== 'Sångvagnen');
+  ];
 
   // --- Dagens Ord State ---
   // Initialize with the deterministic daily verse
@@ -140,7 +133,7 @@ const HomePage: React.FC = () => {
     };
   }, []);
 
-  const getPreviewText = (item: Article | Prayer | Song | Blessing) => {
+  const getPreviewText = (item: Article | Prayer | Blessing) => {
     const content = (item as any).body || (item as any).lyrics || '';
     return buildTeaser(content, 150);
   };
@@ -174,7 +167,7 @@ const HomePage: React.FC = () => {
                           ? FALLBACK_IMAGES.article
                           : item.type === 'Bön'
                             ? FALLBACK_IMAGES.prayer
-                            : FALLBACK_IMAGES.song;
+                            : FALLBACK_IMAGES.blessing;
 
                         if (e.currentTarget.src !== fallback) {
                           e.currentTarget.src = fallback;
@@ -271,11 +264,10 @@ const HomePage: React.FC = () => {
             {[
               { label: 'Senaste artikel', item: latestArticle, path: `/articles/${latestArticle.id}`, type: 'article' as const },
               { label: 'Senaste bön', item: latestPrayer, path: `/prayers/${latestPrayer.id}`, type: 'prayer' as const },
-              { label: 'Senaste sång', item: latestSong, path: `/songs/${latestSong.id}`, type: 'song' as const },
               latestBlessing && { label: 'Senaste välsignelse', item: latestBlessing, path: `/blessings/${latestBlessing.id}`, type: 'blessing' as const }, // latest blessing for “Tala välsignelser”-tool
             ].filter(Boolean).map((row, idx) => {
               const image = getCoverImage(
-                row.item as Article | Prayer | Song | Blessing | undefined,
+                row.item as Article | Prayer | Blessing | undefined,
                 row.type
               );
 
@@ -293,9 +285,7 @@ const HomePage: React.FC = () => {
                             ? FALLBACK_IMAGES.article
                             : row.type === 'prayer'
                               ? FALLBACK_IMAGES.prayer
-                              : row.type === 'song'
-                                ? FALLBACK_IMAGES.song
-                                : FALLBACK_IMAGES.blessing;
+                              : FALLBACK_IMAGES.blessing;
 
                           if (e.currentTarget.src !== fallback) {
                             e.currentTarget.src = fallback;
