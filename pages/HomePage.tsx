@@ -67,6 +67,12 @@ const HomePage: React.FC = () => {
   ].filter(item => item.data);
 
   const { latestSong, latestPrayer, latestArticle, latestBlessing } = getOrderedContent(ARTICLES, PRAYERS, SONGS, BLESSINGS);
+  const toolCards = [
+    { to: '/songs', title: 'Sångbank', icon: Music, desc: 'Hitta sånger' },
+    { to: '/prayers', title: 'Mental träning', icon: Brain, desc: 'Fokus, riktning och målbild' },
+    { to: '/blessings', title: 'Tala välsignelser', icon: Sparkles, desc: 'Guds kraft i ditt liv' },
+    { to: '/articles', title: 'Artiklar', icon: FileText, desc: 'Läs om tro' },
+  ].filter((tool) => tool.title !== 'Sångvagnen');
 
   // --- Dagens Ord State ---
   // Initialize with the deterministic daily verse
@@ -329,10 +335,9 @@ const HomePage: React.FC = () => {
             <Link to="/tools" className="text-xs text-accent font-medium hover:text-primary transition-colors">Visa alla</Link>
           </div>
           <div className="grid grid-cols-2 gap-3">
-            <ToolCard to="/songs" title="Sångbank" icon={Music} desc="Hitta sånger" />
-            <ToolCard to="/prayers" title="Mental träning" icon={Brain} desc="Fokus, riktning och målbild" />
-            <ToolCard to="/blessings" title="Tala välsignelser" icon={Sparkles} desc="Guds kraft i ditt liv" />
-            <ToolCard to="/articles" title="Artiklar" icon={FileText} desc="Läs om tro" />
+            {toolCards.map((tool) => (
+              <ToolCard key={tool.to} {...tool} />
+            ))}
           </div>
         </section>
       </div>
