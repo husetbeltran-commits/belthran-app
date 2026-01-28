@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { Brain, FileText, RefreshCw, ChevronLeft, Sparkles } from 'lucide-react';
+import { isToolHidden } from '../utils/toolVisibility';
 
 const ToolsPage: React.FC = () => {
   const tools = [
@@ -29,7 +30,7 @@ const ToolsPage: React.FC = () => {
       icon: RefreshCw, 
       path: '/verses' 
     },
-  ];
+  ].filter((tool) => !isToolHidden(tool.title));
 
   return (
     <div className="animate-fade-in min-h-screen">
