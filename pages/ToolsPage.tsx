@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
-import { Music, BookOpen, FileText, RefreshCw, ChevronLeft, Sparkles } from 'lucide-react';
+import { Music, Brain, FileText, RefreshCw, ChevronLeft, Sparkles } from 'lucide-react';
 
 const ToolsPage: React.FC = () => {
   const tools = [
@@ -14,7 +14,7 @@ const ToolsPage: React.FC = () => {
     {
       title: 'Mental träning',
       desc: 'Guidad mental träning för fokus, mål och inre disciplin.',
-      icon: BookOpen,
+      icon: Brain,
       path: '/prayers'
     },
     {

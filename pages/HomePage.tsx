@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { SONGS, PRAYERS, ARTICLES, BLESSINGS } from '../data/mockData';
-import { ArrowRight, Music, BookOpen, FileText, RefreshCw, Sparkles } from 'lucide-react';
+import { ArrowRight, Music, Brain, FileText, RefreshCw, Sparkles } from 'lucide-react';
 import { getDailyVerse, getRandomVerse, getBookCategory, generateReflection } from '../utils/bibleHelpers';
 import { Article, BibleVerse, Blessing, Prayer, Song } from '../types';
 import { getOrderedContent } from '../utils/dateHelpers';
@@ -330,7 +330,7 @@ const HomePage: React.FC = () => {
           </div>
           <div className="grid grid-cols-2 gap-3">
             <ToolCard to="/songs" title="Sångbank" icon={Music} desc="Hitta sånger" />
-            <ToolCard to="/prayers" title="Mental träning" icon={BookOpen} desc="Fokus, riktning och målbild" />
+            <ToolCard to="/prayers" title="Mental träning" icon={Brain} desc="Fokus, riktning och målbild" />
             <ToolCard to="/blessings" title="Tala välsignelser" icon={Sparkles} desc="Guds kraft i ditt liv" />
             <ToolCard to="/articles" title="Artiklar" icon={FileText} desc="Läs om tro" />
           </div>
