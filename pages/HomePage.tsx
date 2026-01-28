@@ -257,10 +257,10 @@ const HomePage: React.FC = () => {
                 <button
                   onClick={handleRandomizeVerse}
                   disabled={isRandomizing}
-                  className="w-full bg-accent hover:bg-accent-hover active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed text-white font-bold py-3.5 px-4 rounded-full flex items-center justify-center gap-2 transition-all shadow-md"
+                  className="w-full border border-border bg-surface-variant/60 hover:bg-surface-variant active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed text-secondary font-semibold py-2.5 px-4 rounded-full flex items-center justify-center gap-2 transition-all"
                 >
-                  <RefreshCw size={18} className={isRandomizing ? 'animate-spin' : ''} />
-                  <span>{isRandomizing ? 'Slumpar...' : 'Slumpa en vers'}</span>
+                  <RefreshCw size={16} className={isRandomizing ? 'animate-spin' : ''} />
+                  <span>Ny tanke</span>
                 </button>
               )}
 
