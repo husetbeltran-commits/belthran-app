@@ -5,8 +5,6 @@ import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage';
 import ToolsPage from './pages/ToolsPage';
 import SearchPage from './pages/SearchPage';
-import SongsPage from './pages/SongsPage';
-import SongDetailPage from './pages/SongDetailPage';
 import PrayersPage from './pages/PrayersPage';
 import PrayerDetailPage from './pages/PrayerDetailPage';
 import BlessingsPage from './pages/BlessingsPage';
@@ -26,8 +24,6 @@ const App: React.FC = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/tools" element={<ToolsPage />} />
             <Route path="/search" element={<SearchPage />} />
-            
-            <Route path="/songs" element={<SongsPage />} />
 
             <Route path="/prayers" element={<PrayersPage />} />
             <Route path="/blessings" element={<BlessingsPage />} />
@@ -35,7 +31,6 @@ const App: React.FC = () => {
             <Route path="/articles" element={<ArticlesPage />} />
           </Route>
 
-          <Route path="/songs/:id" element={<SongDetailPage />} />
           <Route path="/prayers/:id" element={<PrayerDetailPage />} />
           <Route path="/blessings/:id" element={<BlessingDetailPage />} />
           <Route path="/articles/:id" element={<ArticleDetailPage />} />

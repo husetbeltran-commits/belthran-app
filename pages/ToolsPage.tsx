@@ -1,16 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
-import { Music, Brain, FileText, RefreshCw, ChevronLeft, Sparkles } from 'lucide-react';
+import { Brain, FileText, RefreshCw, ChevronLeft, Sparkles } from 'lucide-react';
 
 const ToolsPage: React.FC = () => {
   const tools = [
-    { 
-      title: 'Sångbank', 
-      desc: 'Hitta sånger för andakt och gudstjänst.', 
-      icon: Music, 
-      path: '/songs' 
-    },
     {
       title: 'Mental träning',
       desc: 'Guidad mental träning för fokus, mål och inre disciplin.',
@@ -36,7 +30,6 @@ const ToolsPage: React.FC = () => {
       path: '/verses' 
     },
   ];
-  const visibleTools = tools.filter((tool) => tool.title !== 'Sångvagnen');
 
   return (
     <div className="animate-fade-in min-h-screen">
@@ -49,7 +42,7 @@ const ToolsPage: React.FC = () => {
         }
       />
       <div className="p-4 grid gap-4">
-        {visibleTools.map((tool) => (
+        {tools.map((tool) => (
           <Link 
             key={tool.path}
             to={tool.path}
