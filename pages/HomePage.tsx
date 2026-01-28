@@ -207,13 +207,13 @@ const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Dagens Ord - New Interactive Card */}
+        {/* Dagens Tanke - New Interactive Card */}
         <section>
           <div className={`bg-surface relative overflow-hidden rounded-xl border border-border shadow-sm transition-all duration-500 ${isRandomizing ? 'opacity-80 scale-[0.99]' : 'opacity-100 scale-100'}`}>
             
             {/* Header / Title */}
             <div className="p-5 pb-0">
-               <h2 className="text-lg font-bold text-primary mb-1">Dagens ord</h2>
+               <h2 className="text-lg font-bold text-primary mb-1">Dagens tanke</h2>
             </div>
 
             {/* Content Container */}
@@ -229,13 +229,6 @@ const HomePage: React.FC = () => {
                      {isRandomizing && animatedReference ? animatedReference : currentVerse.reference}
                    </p>
                 </div>
-              </div>
-
-              {/* Source Line */}
-              <div className="border-t border-border pt-4">
-                 <p className="text-[10px] font-bold text-secondary uppercase tracking-widest text-center">
-                   Vår vers kommer från: {getBookCategory(currentVerse.reference)}
-                 </p>
               </div>
 
               {/* Reflection */}
