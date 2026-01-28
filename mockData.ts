@@ -71,279 +71,268 @@ export const PRAYERS: Prayer[] = [
   {
     id: '1',
     title: 'The Bridge',
-    body: `## Arrival
+    body: `ARRIVAL
 
-Find a comfortable position.  
+Find a comfortable position.
 Let your body become still, while your mind remains awake.
 
-This is not something to perform or solve.  
+This is not something to perform or solve.
 It is a space to see and orient.
 
-For the next minutes, allow yourself to follow the images that arise.  
+For the next minutes, allow yourself to follow the images that arise.
 Nothing needs to be forced.
 
-*Pause.*
+(pause)
 
----
 
-## Settling
+SETTLING
 
-Begin by noticing your breathing.  
-Inhale gently.  
+Begin by noticing your breathing.
+Inhale gently.
 Exhale fully.
 
-*Pause.*
+(pause)
 
-Let each breath slow you down a little more.  
-Your shoulders soften.  
+Let each breath slow you down a little more.
+Your shoulders soften.
 Your face relaxes.
 
-*Pause.*
+(pause)
 
-Your attention turns inward.  
-Calm.  
-Clear.  
+Your attention turns inward.
+Calm.
+Clear.
 Present.
 
----
 
-## The Overview
+THE OVERVIEW
 
-Now imagine yourself gently rising above your life.  
-As if you are lifted in a quiet air balloon,  
-slowly gaining height,  
+Now imagine yourself gently rising above your life.
+As if you are lifted in a quiet air balloon,
+slowly gaining height,
 until you can see your life from above.
 
-*Pause.*
+(pause)
 
-Below you, notice the different areas of your life.  
-Not in detail.  
+Below you, notice the different areas of your life.
+Not in detail.
 Just as landscapes.
 
-Some areas may feel open and alive.  
+Some areas may feel open and alive.
 Some may feel unclear, unfinished, or distant.
 
-*Pause.*
+(pause)
 
-Notice which areas matter most to you right now.  
-Not what should matter —  
+Notice which areas matter most to you right now.
+Not what should matter —
 but what truly draws your attention.
 
-*Pause.*
+(pause)
 
 Simply observe.
 
----
 
-## The Distance
+THE DISTANCE
 
-Now notice that in some areas,  
-there is a distance between where things are today  
+Now notice that in some areas,
+there is a distance between where things are today
 and where you sense they could go.
 
 Picture this distance as a canyon.
 
-*Pause.*
+(pause)
 
-In some places the canyon may be narrow.  
+In some places the canyon may be narrow.
 In others, wide and deep.
 
-*Pause.*
+(pause)
 
-On the other side, notice how things could be.  
-Not perfect.  
+On the other side, notice how things could be.
+Not perfect.
 But aligned.
 
-See how that place looks.  
+See how that place looks.
 Sense how it feels to imagine standing there.
 
-*Pause.*
+(pause)
 
----
 
-## Desire
+DESIRE
 
-Now feel your desire to move toward that place.  
-Not as pressure.  
-Not as urgency.  
+Now feel your desire to move toward that place.
+Not as pressure.
+Not as urgency.
 But as willingness.
 
-*Pause.*
+(pause)
 
-This desire is not a wish.  
+This desire is not a wish.
 It is a decision to move in a direction.
 
-Let that decision settle in your body.  
-Quiet.  
+Let that decision settle in your body.
+Quiet.
 Steady.
 
-*Pause.*
+(pause)
 
----
 
-## The Bridge — Will and Faith
+THE BRIDGE — WILL AND FAITH
 
-Now imagine a bridge beginning to form across the canyon.  
-It does not appear all at once.  
+Now imagine a bridge beginning to form across the canyon.
+It does not appear all at once.
 It is built plank by plank.
 
-*Pause.*
+(pause)
 
-The first plank appears because you will it.  
+The first plank appears because you will it.
 You decide to move.
 
-*Pause.*
+(pause)
 
-The second plank appears because you do not let go.  
+The second plank appears because you do not let go.
 You stay with your direction.
 
-*Pause.*
+(pause)
 
-The third plank appears because you believe it is possible.  
-Not emotionally —  
+The third plank appears because you believe it is possible.
+Not emotionally —
 but practically.
 
-*Pause.*
+(pause)
 
-The fourth plank appears as your belief strengthens.  
+The fourth plank appears as your belief strengthens.
 You trust that what you aim for can be accomplished.
 
-*Pause.*
+(pause)
 
-The fifth plank appears because you keep your will directed,  
+The fifth plank appears because you keep your will directed,
 even when nothing else seems to change.
 
-*Pause.*
+(pause)
 
-*You have reached the middle of the bridge.*
+You have reached the middle of the bridge.
 
----
 
-## Becoming — Identity and Integrity
+BECOMING — IDENTITY AND INTEGRITY
 
 The sixth plank appears because you begin to be the right person to continue.
 
-Picture yourself clearly.  
-How you stand.  
-How you move.  
+Picture yourself clearly.
+How you stand.
+How you move.
 How your face looks when you are aligned.
 
-*Pause.*
+(pause)
 
-Notice how your body feels.  
-Grounded.  
+Notice how your body feels.
+Grounded.
 Present.
 
-*Pause.*
+(pause)
 
 When this feels real, the plank settles into place.
 
-*Pause.*
+(pause)
 
-The seventh plank appears as you imagine acting with integrity  
-across all areas of your life.  
-Not selectively.  
-Not occasionally.  
+The seventh plank appears as you imagine acting with integrity
+across all areas of your life.
+Not selectively.
+Not occasionally.
 Consistently.
 
-*Pause.*
+(pause)
 
----
 
-## Capacity — Receiving and Managing
+CAPACITY — RECEIVING AND MANAGING
 
-The eighth plank appears as you sense yourself becoming capable  
+The eighth plank appears as you sense yourself becoming capable
 of holding what you are moving toward.
 
-Responsibility.  
-Stability.  
+Responsibility.
+Stability.
 Balance.
 
-*Pause.*
+(pause)
 
-You are not reaching for something beyond you.  
+You are not reaching for something beyond you.
 You are growing into it.
 
-*Pause.*
+(pause)
 
-The ninth plank appears as your will matures.  
-It is no longer forceful.  
+The ninth plank appears as your will matures.
+It is no longer forceful.
 It is steady.
 
-*Pause.*
+(pause)
 
-You no longer ask if you will continue.  
+You no longer ask if you will continue.
 You simply do.
 
-*Pause.*
+(pause)
 
-The tenth plank appears as you accept that you can receive  
-what you are aiming for —  
+The tenth plank appears as you accept that you can receive
+what you are aiming for —
 and manage it well.
 
-*Pause.*
+(pause)
 
 The bridge is now complete.
 
----
 
-## Will — Crossing
+WILL — CROSSING
 
 Now look toward the other side.
 
-Feel your will gather in your body.  
-Not tension.  
-Not force.  
+Feel your will gather in your body.
+Not tension.
+Not force.
 Resolve.
 
-*Pause.*
+(pause)
 
 Silently say to yourself:
 
-I am getting there.  
-I am becoming who I need to be.  
+I am getting there.
+I am becoming who I need to be.
 I am moving forward.
 
-*Pause.*
+(pause)
 
-With each repetition, feel your will strengthen.  
-Grounded.  
+With each repetition, feel your will strengthen.
+Grounded.
 Certain.
 
-*Pause.*
+(pause)
 
----
 
-## Arrival
+ARRIVAL
 
-Now sense yourself standing on the other side.  
-No drama.  
-No celebration.  
+Now sense yourself standing on the other side.
+No drama.
+No celebration.
 Just arrival.
 
-*Pause.*
+(pause)
 
-Notice how natural it feels to be here.  
-Not because it was easy —  
+Notice how natural it feels to be here.
+Not because it was easy —
 but because you became the one who could arrive.
 
-*Pause.*
+(pause)
 
 Let this feeling settle into your body.
 
----
 
-## Return
+RETURN
 
 Begin to let the images soften.
-
-Bring your attention back to your breathing.  
+Bring your attention back to your breathing.
 To the room around you.
 
-*Pause.*
+(pause)
 
-Carry this sense of direction with you.  
-Not as pressure —  
+Carry this sense of direction with you.
+Not as pressure —
 but as orientation.
 
 When you are ready, open your eyes.`,
