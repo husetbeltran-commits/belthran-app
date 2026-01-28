@@ -775,6 +775,76 @@ alla ni som hoppas på Herren!`,
       { id: 't1', title: 'Mitt hjärta i stormen – reflektion', audioUrl: 'https://www.youtube.com/embed/oQMJBz5bcbg?si=mGSd6pPQTL4sQhDB' }
     ],
     imageUrl: 'https://images.unsplash.com/photo-1501975558162-0be7b8c5d2ff?q=80&w=1200&auto=format&fit=crop'
+  },
+  {
+    id: '6',
+    title: 'Arrival',
+    body: `## ARRIVAL
+
+Find a comfortable position.
+Let your body become still, while your mind remains awake.
+
+This is not something to perform or solve.
+It is a space to see and orient.
+
+For the next minutes, allow yourself to follow the images that arise.
+Nothing needs to be forced.
+
+(pause)
+
+---
+
+## SETTLING
+
+Begin by noticing your breathing.
+Inhale gently.
+Exhale fully.
+
+(pause)
+
+Let each breath slow you down a little more.
+Your shoulders soften.
+Your face relaxes.
+
+(pause)
+
+Your attention turns inward.
+Calm.
+Clear.
+Present.
+
+---
+
+## THE OVERVIEW
+
+Now imagine yourself gently rising above your life.
+As if you are lifted in a quiet air balloon,
+slowly gaining height,
+until you can see your life from above.
+
+(pause)
+
+Below you, notice the different areas of your life.
+Not in detail.
+Just as landscapes.
+
+Some areas may feel open and alive.
+Some may feel unclear, unfinished, or distant.
+
+(pause)
+
+Notice which areas matter most to you right now.
+Not what should matter —
+but what truly draws your attention.
+
+(pause)
+
+Simply observe.`,
+    categories: ['Mental träning', 'Närvaro'],
+    tags: ['Stillhet', 'Fokus'],
+    createdAt: '2025-03-05T06:30:00Z',
+    tracks: [],
+    imageUrl: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=600&auto=format&fit=crop'
   }
 ];
 
