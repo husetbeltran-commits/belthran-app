@@ -14,11 +14,12 @@ const BelthranLogoIcon: React.FC<IconProps> = ({ className, ...props }) => {
       {...props}
     >
       <path
-        d="M20 14h24v10c0 8-6 14-12 14s-12-6-12-14V14z"
-        fill="currentColor"
+        d="M22 12v40M22 12h16a10 10 0 0 1 0 20H22m0 0h18a10 10 0 0 1 0 20H22"
+        stroke="currentColor"
+        strokeWidth={5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
-      <path d="M30 38h4v10h-4z" fill="currentColor" />
-      <path d="M24 48h16v4H24z" fill="currentColor" />
     </svg>
   );
 };
