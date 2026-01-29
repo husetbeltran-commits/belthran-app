@@ -1,4 +1,4 @@
-import { Song, Prayer, Article, BibleVerse } from '../types';
+import { Song, Prayer, Article } from '../types';
 
 export const SONGS: Song[] = [
   {

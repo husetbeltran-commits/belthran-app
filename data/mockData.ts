@@ -1,5 +1,5 @@
 
-import { Song, Prayer, Article, BibleVerse, Blessing } from '../types';
+import { Song, Prayer, Article, Blessing, Thought } from '../types';
 
 const IMAGE_BASE_PATH = (() => {
   const base = import.meta.env.BASE_URL || '/';
@@ -1348,291 +1348,53 @@ Bibeln säger:
   
 ];
 
-export const VERSES: BibleVerse[] = [
+export const THOUGHTS: Thought[] = [
   {
-    id: '1',
-    reference: 'Psaltaren 23:1',
-    text: 'Herren är min herde, mig skall inget fattas.',
-    reflection:
-      'Du får vila i att du inte behöver bära allt själv. Gud leder dig steg för steg, även när du känner dig osäker. Låt honom vara din trygghet i dag.',
-    isDailyWord: true
+    id: 't1',
+    text: 'Ta ett andetag och ge dig själv utrymme. Ibland är nästa steg inte att göra mer, utan att göra det som redan finns med närvaro.',
+    source: 'Belthran',
+    reflection: 'Fundera på vad som faktiskt behöver din uppmärksamhet just nu, och våga låta resten vänta.'
   },
   {
-    id: '2',
-    reference: 'Jesaja 41:10',
-    text:
-      'Frukta inte, ty jag är med dig. Se dig inte ängsligt om, ty jag är din Gud. Jag styrker dig och hjälper dig, jag stöder dig med min rättfärdighets högra hand.',
-    reflection:
-      'Du är inte ensam i det du står i just nu. Gud håller dig uppe när du känner dig svag. Lita på att han bär dig genom allt som känns för stort.'
+    id: 't2',
+    text: 'Små beslut formar stora riktningar. Det du väljer i dag kan skapa den rytm du vill leva i i morgon.',
+    source: 'Belthran',
+    reflection: 'Skriv ner ett litet val du vill göra konsekvent den här veckan.'
   },
   {
-    id: '3',
-    reference: 'Matteusevangeliet 11:28',
-    text: 'Kom till mig, alla ni som arbetar och står betunga, så skall jag ge er vila.',
-    reflection:
-      'Du behöver inte fortsätta kämpa i egen kraft. Låt Jesus ta del av det du bär på. Han vill ge dig en vila som når längre än sömn och ledighet.',
-    isDailyWord: true
+    id: 't3',
+    text: 'Det är okej att gå långsamt. Framsteg handlar inte om fart, utan om att du fortsätter i rätt riktning.',
+    source: 'Belthran',
+    reflection: 'Titta tillbaka på något du redan tagit dig igenom och påminn dig om att du kan ta nästa steg också.'
   },
   {
-    id: '4',
-    reference: 'Filipperbrevet 4:6–7',
-    text:
-      'Bekymra er inte för något, utan låt Gud i allt få veta era önskningar genom bön och åkallan med tacksägelse. Och Guds frid, som övergår allt förstånd, skall bevara era hjärtan och era tankar i Kristus Jesus.',
-    reflection:
-      'Du får lämna din oro till Gud, om och om igen. När du gör det öppnar du dörren för hans frid att fylla dig. Han vakar över dig, även när du inte märker det.'
+    id: 't4',
+    text: 'Ditt fokus är en gåva. När du riktar det mot det som bygger upp, får du mer kraft till det som betyder något.',
+    source: 'Belthran',
+    reflection: 'Vad vill du ge din uppmärksamhet idag för att känna mer lugn och klarhet?'
   },
   {
-    id: '5',
-    reference: 'Psaltaren 46:2',
-    text: 'Därför behöver vi inte frukta, även om jorden skakar och bergen störtar i havets hjärta.',
-    reflection:
-      'Du har en trygg plats att gå till när livet skakar. Gud är din fasta grund, även om allt omkring dig faller. Du kan luta dig mot honom i allt.'
+    id: 't5',
+    text: 'Tacksamhet skiftar perspektiv. Den gör inte allt enkelt, men den gör det lättare att se det som bär.',
+    source: 'Belthran',
+    reflection: 'Lista tre små saker du är tacksam för just nu, även om dagen är hektisk.'
   },
   {
-    id: '6',
-    reference: 'Jeremia 29:11',
-    text: 'Ty jag vet vilka tankar jag har för er — det är fridens tankar och inte ofärdens — för att ge er en framtid och ett hopp.',
-    reflection:
-      'Du får tro att Gud har goda tankar för din framtid. Även när du inte ser vägen framför dig, är han redan där. Han leder dig mot hopp och helhet.'
+    id: 't6',
+    text: 'Du behöver inte ha alla svar i dag. Att stanna upp och lyssna kan vara det modigaste du gör.',
+    source: 'Belthran',
+    reflection: 'Ge dig själv fem minuter av stillhet och lägg märke till vad som dyker upp.'
   },
   {
-    id: '7',
-    reference: 'Johannes 14:27',
-    text: 'Frid lämnar jag kvar åt er, min frid ger jag er. Inte ger jag er det som världen ger. Låt inte era hjärtan oroas och tappa inte modet.',
-    reflection:
-      'Du kan ta emot en frid som inte beror på omständigheter. Den kommer från Jesus själv. Låt hans ord lugna ditt hjärta i dag.'
+    id: 't7',
+    text: 'När pressen ökar, gå tillbaka till grunden: vila, näring och gemenskap. Det bygger styrka som håller.',
+    source: 'Belthran',
+    reflection: 'Vilken grund behöver du stärka först: vila, mat, relationer eller rytm?'
   },
   {
-    id: '8',
-    reference: 'Romarbrevet 8:38–39',
-    text:
-      'Ty jag är övertygad om att varken död eller liv, änglar eller furstar eller makter eller något som skall ske, vare sig höjd eller djup eller någon annan skapad ting, skall kunna skilja oss från Guds kärlek i Kristus Jesus vår Herre.',
-    reflection:
-      'Du är älskad utan villkor. Ingenting du möter kan ta dig bort från den kärleken. Du får vila i att Gud håller fast vid dig varje dag.',
-    isDailyWord: true
-  },
-  {
-    id: '9',
-    reference: 'Psaltaren 34:18',
-    text: 'Herren är nära dem som har förkrossat hjärta, han räddar dem som har bedrövad ande.',
-    reflection:
-      'När du känner dig trasig, är Gud ännu närmare än du tror. Han ser dina tårar och din kamp. Låt honom trösta och läka det som gör ont.'
-  },
-  {
-    id: '10',
-    reference: 'Andra Korinthierbrevet 12:9',
-    text: 'Men han sade till mig: ”Min nåd är allt du behöver, för kraften fullkomnas i svaghet.”',
-    reflection:
-      'Du behöver inte vara stark hela tiden. Gud verkar mitt i din svaghet och bär det du inte orkar. Du får vila i hans tillräcklighet.'
-  },
-  {
-    id: '11',
-    reference: 'Psaltaren 121:1–2',
-    text: 'Jag lyfter mina ögon upp mot bergen — varifrån skall min hjälp komma? Min hjälp kommer från Herren, himlens och jordens skapare.',
-    reflection:
-      'Du kan lyfta blicken från det som tynger dig. Gud är din hjälp, inte dina egna ansträngningar. Han möter dig där du är och leder dig framåt.'
-  },
-  {
-    id: '12',
-    reference: 'Ordspråksboken 3:5–6',
-    text: 'Förtrösta på Herren av hela ditt hjärta och förlita dig inte på ditt förstånd. Erkänn honom på alla dina vägar, så skall han göra dina stigar jämna.',
-    reflection:
-      'Du behöver inte förstå allt för att gå med Gud. När du lägger dina vägar i hans hand, leder han dig rätt. Låt honom visa dig nästa steg.'
-  },
-  {
-    id: '13',
-    reference: 'Psaltaren 91:4',
-    text: 'Han skall täcka dig med sina fjädrar, under hans vingar finner du din tillflykt.',
-    reflection:
-      'Du får gömma dig hos Gud när livet känns farligt eller överväldigande. Han skyddar dig som en trygg famn. Vila där en stund i dag.'
-  },
-  {
-    id: '14',
-    reference: 'Efesierbrevet 2:10',
-    text: 'Ty vi är hans skapelse, skapade i Kristus Jesus till goda gärningar, som Gud förberett åt oss, för att vi skall vandra i dem.',
-    reflection:
-      'Du är skapad med mening och värde. Gud har lagt ner något vackert i dig som ingen annan har. Du får gå i det han har förberett för dig.'
-  },
-  {
-    id: '15',
-    reference: 'Jesaja 40:31',
-    text: 'Men de som hoppas på Herren får ny kraft, de flyger upp med vingar som örnar, de springer utan att mattas, de vandrar utan att bli trötta.',
-    reflection:
-      'När du känner dig slutkörd kan Gud fylla dig med ny styrka. Du får våga hoppas, även om det känns svårt. Han reser dig när du faller.'
-  },
-  {
-    id: '16',
-    reference: 'Psaltaren 139:5',
-    text: 'Du omsluter mig på alla sidor och håller mig i din hand.',
-    reflection:
-      'Du är aldrig utanför Guds omsorg. Han har dig i sitt grepp, både när du sover och när du kämpar. Lita på att han vakar över dig.'
-  },
-  {
-    id: '17',
-    reference: 'Romarbrevet 15:13',
-    text: 'Må hoppets Gud fylla er med all glädje och frid i tron, så att ni överflödar i hopp med hjälp av den helige Ande.',
-    reflection:
-      'Gud vill fylla dig med ett hopp som bär genom allt. Du behöver inte skapa det själv. Öppna ditt hjärta för hans glädje och frid i dag.'
-  },
-  {
-    id: '18',
-    reference: 'Johannesevangeliet 15:5',
-    text: 'Jag är vinstocken, ni är grenarna. Den som blir kvar i mig och jag i honom bär mycket frukt, för utan mig kan ni ingenting göra.',
-    reflection:
-      'Du behöver inte prestera inför Gud. När du vilar i honom, flödar livet igenom dig. Låt honom vara din kraftkälla i allt du gör.'
-  },
-  {
-    id: '19',
-    reference: 'Klagovisorna 3:22–23',
-    text: 'Herren stora trofasthet har inte tagit slut, hans barmhärtighet är inte slut. Den är ny varje morgon. Din trofasthet är stor.',
-    reflection:
-      'Hur gårdagen än såg ut, börjar Gud om med dig i dag. Du får ta emot hans nåd på nytt. Andas in hans barmhärtighet och börja om i frid.'
-  },
-  {
-    id: '20',
-    reference: 'Psaltaren 55:23',
-    text: 'Kasta din börda på Herren, han skall uppehålla dig. Han skall aldrig tillåta den rättfärdige att vackla.',
-    reflection:
-      'Du behöver inte bära allt själv längre. Gud tar emot det du lägger i hans hand. Låt honom lyfta av dig det som tynger ditt hjärta just nu.'
-  },
-  {
-    id: '21',
-    reference: 'Jesaja 55:7',
-    text: 'Den ogudaktige må överge sin väg och den orättfärdige sina tankar. Han må vända om till Herren, så skall han förbarma sig över honom.',
-    reflection:
-      'Du får alltid en väg tillbaka, oavsett hur din vandring sett ut. När du överger det som skadar dig och vänder dig mot Gud, möter han dig med ömhet och förlåtelse.'
-  },
-  {
-    id: '22',
-    reference: 'Jakobs brev 4:8',
-    text: 'Närma er Gud, så skall han närma sig er. Gör era händer rena, ni syndare, och rena era hjärtan, ni tvehågsna.',
-    reflection:
-      'Du får komma nära Gud precis som du är. När du gör det, renar han dig steg för steg och fyller dig med ny kraft för att leva annorlunda.'
-  },
-  {
-    id: '23',
-    reference: 'Romarbrevet 12:2',
-    text: 'Anpassa er inte efter den här världen, utan låt er förvandlas genom förnyelsen av ert sinne.',
-    reflection:
-      'Du behöver inte följa strömmen. Gud ger dig förmågan att tänka nytt, välja nytt och leva med riktning och klarhet.'
-  },
-  {
-    id: '24',
-    reference: 'Psaltaren 32:1',
-    text: 'Salig är den som fått sin överträdelse förlåten, sin synd övertäckt.',
-    reflection:
-      'Du kan andas ut. Förlåtelsen är verklig, och du behöver inte bära gamla bördor längre. Gud täcker det som varit och gör dig fri.'
-  },
-  {
-    id: '25',
-    reference: 'Första Johannesbrevet 1:9',
-    text: 'Om vi bekänner våra synder är han trofast och rättfärdig, så att han förlåter oss synderna och renar oss från all orättfärdighet.',
-    reflection:
-      'Du behöver aldrig tveka att komma till Gud. Han möter dig inte med skam, utan med rening och en nystart.'
-  },
-  {
-    id: '26',
-    reference: 'Ordspråksboken 28:13',
-    text: 'Den som döljer sina överträdelser går det illa, men den som bekänner och överger dem finner barmhärtighet.',
-    reflection:
-      'Du blir inte fri genom att dölja det som gör ont — du blir fri genom att komma till Gud med det. Han tar emot dig och leder dig vidare.'
-  },
-  {
-    id: '27',
-    reference: 'Johannes 8:12',
-    text: 'Jag är världens ljus. Den som följer mig skall inte vandra i mörkret utan ha livets ljus.',
-    reflection:
-      'Du behöver inte famla i mörkret. När du följer Jesus får du riktning, klarhet och ett ljus som aldrig slocknar.'
-  },
-  {
-    id: '28',
-    reference: 'Efesierbrevet 4:22–24',
-    text: 'Lägg av den gamla människan… och ikläd er den nya som är skapad till likhet med Gud.',
-    reflection:
-      'Du är inte fast i gamla mönster. Gud hjälper dig att lämna det som håller dig tillbaka och klä dig i ett nytt sätt att leva.'
-  },
-  {
-    id: '29',
-    reference: 'Psaltaren 51:12',
-    text: 'Skapa i mig ett rent hjärta, Gud, och ge mig på nytt en frimodig ande.',
-    reflection:
-      'Gud kan förnya dig på djupet, även där du känner dig som svagast. Be honom att göra ditt hjärta rent och din ande stark igen.'
-  },
-  {
-    id: '30',
-    reference: 'Titusbrevet 2:11–12',
-    text: 'Guds nåd… fostrar oss till att säga nej till ogudaktighet och världsliga begär.',
-    reflection:
-      'Du är inte ensam i kampen mot det som drar dig bort från Gud. Hans nåd lär dig steg för steg att leva ett renare liv.'
-  },
-  {
-    id: '31',
-    reference: 'Hebreerbrevet 12:1',
-    text: 'Låt oss lägga bort allt som tynger och särskilt synden som snärjer oss.',
-    reflection:
-      'Du får släppa taget om det som binder dig. Gud ger dig mod att lämna allt som kväver glädjen och hindrar din vandring.'
-  },
-  {
-    id: '32',
-    reference: 'Andra Timoteusbrevet 1:7',
-    text: 'Gud har inte gett oss en ande av fruktan, utan av kraft, kärlek och självbehärskning.',
-    reflection:
-      'Du behöver inte styras av rädsla eller av gamla mönster. Du har fått kraft att stå stadigt och välja det som bygger upp.'
-  },
-  {
-    id: '33',
-    reference: 'Matteusevangeliet 5:8',
-    text: 'Saliga är de renhjärtade, för de skall se Gud.',
-    reflection:
-      'Du får sträva efter ett rent hjärta — inte perfekt, men äkta. Gud möter dig när du söker honom med uppriktighet.'
-  },
-  {
-    id: '34',
-    reference: 'Romarbrevet 6:14',
-    text: 'Synden skall inte vara herre över er, för ni står inte under lagen utan under nåden.',
-    reflection:
-      'Du behöver inte vara slav under gamla vanor. Guds nåd ger dig kraft att leva fritt och nytt.'
-  },
-  {
-    id: '35',
-    reference: 'Första Petrusbrevet 1:16',
-    text: 'Var heliga, för jag är helig.',
-    reflection:
-      'Du får växa i helighet, steg för steg. Gud kallar dig inte till perfektion, utan till gemenskap med honom — och där förändras du.'
-  },
-  {
-    id: '36',
-    reference: 'Galaterbrevet 5:16',
-    text: 'Vandra i Anden, så kommer ni inte göra vad köttet begär.',
-    reflection:
-      'Du kan ta beslut i vardagen med Andens hjälp. När du går med Gud, faller många frestelser bort av sig själva.'
-  },
-  {
-    id: '37',
-    reference: 'Psaltaren 119:11',
-    text: 'Jag gömmer ditt ord i mitt hjärta för att inte synda mot dig.',
-    reflection:
-      'Du får fylla ditt hjärta med Guds ord. Det stärker dig, ger vishet och leder dig när du står inför val.'
-  },
-  {
-    id: '38',
-    reference: 'Johannes 15:3',
-    text: 'Ni är redan rena genom det ord som jag har talat till er.',
-    reflection:
-      'Gud renar dig inte genom prestation, utan genom sitt ord och sin närvaro. Du är redan påbörjad i något nytt.'
-  },
-  {
-    id: '39',
-    reference: 'Josua 1:9',
-    text: 'Var stark och frimodig… ty Herren, din Gud, är med dig vart du än går.',
-    reflection:
-      'Du kan gå modigt även in i förändringar. Gud är med dig i varje steg, varje beslut, varje omstart.'
-  },
-  {
-    id: '40',
-    reference: 'Romarbrevet 13:12',
-    text: 'Låt oss lägga av mörkrets gärningar och ikläda oss ljusets vapenrustning.',
-    reflection:
-      'Du får kliva ut ur det som hör mörkret till och ta på dig det som hör ljuset till. Gud ger dig rustning, klarhet och kraft att leva annorlunda.'
+    id: 't8',
+    text: 'Det du bär behöver inte bäras ensam. Att be om hjälp är ett tecken på mognad, inte svaghet.',
+    source: 'Belthran',
+    reflection: 'Finns det någon du kan sträcka dig mot i dag?'
   }
 ];

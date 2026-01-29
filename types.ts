@@ -64,11 +64,9 @@ export interface Article {
   galleryImageUrls?: string[];
 }
 
-export interface BibleVerse {
+export interface Thought {
   id: string;
-  reference: string;
   text: string;
-  isDailyWord?: boolean;
+  source: string;
   reflection?: string;
 }
-

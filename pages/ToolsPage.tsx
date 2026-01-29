@@ -25,10 +25,10 @@ const ToolsPage: React.FC = () => {
       path: '/articles'
     },
     {
-      title: 'Slumpa en vers',
-      desc: 'Få en slumpad bibelvers med kort reflektion.',
-      icon: RefreshCw, 
-      path: '/verses' 
+      title: 'Slumpa en tanke',
+      desc: 'Få en slumpad tanke med kort reflektion.',
+      icon: RefreshCw,
+      path: '/verses'
     },
   ].filter((tool) => !isToolHidden(tool.title));
 
