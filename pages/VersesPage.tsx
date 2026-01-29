@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { ChevronLeft, RefreshCw, Quote, Sparkles } from 'lucide-react';
-import { BibleVerse } from '../types';
-import { generateReflection, getRandomVerse } from '../utils/bibleHelpers';
+import { Thought } from '../types';
+import { generateReflection, getRandomThought } from '../utils/thoughtHelpers';
 
 const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖabcdefghijklmnopqrstuvwxyzåäö';
 
@@ -19,7 +19,7 @@ const scrambleString = (original: string): string => {
 };
 
 const VersesPage: React.FC = () => {
-  const [currentVerse, setCurrentVerse] = useState<BibleVerse | null>(null);
+  const [currentThought, setCurrentThought] = useState<Thought | null>(null);
   const [reflection, setReflection] = useState<string>('');
   const [isRandomizing, setIsRandomizing] = useState(false);
   const [animatedReference, setAnimatedReference] = useState<string | null>(null);
@@ -29,10 +29,10 @@ const VersesPage: React.FC = () => {
 
   const scrambleIntervalRef = useRef<number | null>(null);
 
-  const handleRandomizeVerse = () => {
+  const handleRandomizeThought = () => {
     if (isRandomizing) return;
 
-    const nextVerse = getRandomVerse();
+    const nextThought = getRandomThought();
     setIsRandomizing(true);
     setIsReflectionVisible(false);
 
@@ -41,8 +41,8 @@ const VersesPage: React.FC = () => {
     }
 
     scrambleIntervalRef.current = window.setInterval(() => {
-      setAnimatedReference(scrambleString(nextVerse.reference));
-      setAnimatedText(scrambleString(nextVerse.text));
+      setAnimatedReference(scrambleString(nextThought.source));
+      setAnimatedText(scrambleString(nextThought.text));
     }, 50);
 
     setTimeout(() => {
@@ -53,8 +53,8 @@ const VersesPage: React.FC = () => {
 
       setAnimatedReference(null);
       setAnimatedText(null);
-      setCurrentVerse(nextVerse);
-      setReflection(generateReflection(nextVerse));
+      setCurrentThought(nextThought);
+      setReflection(generateReflection(nextThought));
       setIsRandomizing(false);
       setIsReflectionVisible(true);
       setReflectionAnimationKey((prev) => prev + 1);
@@ -72,28 +72,28 @@ const VersesPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-background animate-fade-in flex flex-col">
       <Header
-        title="Slumpa en vers"
+        title="Slumpa en tanke"
         backButton={<Link to="/tools" className="text-secondary hover:text-primary"><ChevronLeft /></Link>}
       />
 
       <div className="flex-1 flex flex-col items-center justify-center p-6 text-center max-w-md mx-auto w-full">
 
-        {!currentVerse ? (
+        {!currentThought ? (
           <div className="space-y-8 animate-fade-in">
             <div className="w-24 h-24 bg-surface rounded-full flex items-center justify-center mx-auto text-accent mb-6 border border-border shadow-sm">
               <RefreshCw size={40} className={isRandomizing ? 'animate-spin' : ''} />
             </div>
-            <h2 className="text-2xl font-bold text-primary">Behöver du ett ord på vägen?</h2>
+            <h2 className="text-2xl font-bold text-primary">Behöver du en tanke på vägen?</h2>
             <p className="text-secondary leading-relaxed">
-              Klicka nedan för att få en slumpad bibelvers att reflektera över.
+              Klicka nedan för att få en slumpad tanke att reflektera över.
               Slumpen är bara ett verktyg – låt orden leda dig till eftertanke.
             </p>
             <button
-              onClick={handleRandomizeVerse}
+              onClick={handleRandomizeThought}
               disabled={isRandomizing}
               className="bg-accent text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-accent-hover transition-transform active:scale-95 w-full disabled:opacity-70 disabled:cursor-not-allowed"
             >
-              {isRandomizing ? 'Slumpar...' : 'Slumpa en vers'}
+              {isRandomizing ? 'Slumpar...' : 'Slumpa en tanke'}
             </button>
           </div>
         ) : (
@@ -102,10 +102,10 @@ const VersesPage: React.FC = () => {
 
             <div className="space-y-4">
               <h3 className="text-3xl font-serif font-medium leading-snug text-primary">
-                "{isRandomizing && animatedText ? animatedText : currentVerse.text}"
+                "{isRandomizing && animatedText ? animatedText : currentThought.text}"
               </h3>
               <p className="text-accent font-bold uppercase tracking-widest text-sm">
-                {isRandomizing && animatedReference ? animatedReference : currentVerse.reference}
+                {isRandomizing && animatedReference ? animatedReference : currentThought.source}
               </p>
             </div>
 
@@ -123,12 +123,12 @@ const VersesPage: React.FC = () => {
             </div>
 
             <button
-              onClick={handleRandomizeVerse}
+              onClick={handleRandomizeThought}
               disabled={isRandomizing}
               className="flex items-center justify-center gap-2 text-primary hover:text-accent transition-colors mx-auto mt-8 py-4 disabled:opacity-70 disabled:cursor-not-allowed"
             >
               <RefreshCw size={16} className={isRandomizing ? 'animate-spin' : ''} />
-              <span>{isRandomizing ? 'Slumpar...' : 'Ny vers'}</span>
+              <span>{isRandomizing ? 'Slumpar...' : 'Ny tanke'}</span>
             </button>
           </div>
         )}

@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { PRAYERS, ARTICLES, BLESSINGS } from '../data/mockData';
 import { ArrowRight, Brain, FileText, RefreshCw, Sparkles } from 'lucide-react';
-import { getDailyVerse, getRandomVerse, getBookCategory, generateReflection } from '../utils/bibleHelpers';
-import { Article, BibleVerse, Blessing, Prayer } from '../types';
+import { getDailyThought, getRandomThought, generateReflection } from '../utils/thoughtHelpers';
+import { Article, Blessing, Prayer, Thought } from '../types';
 import { getLatestByCreatedAt } from '../utils/dateHelpers';
 import { buildTeaser } from '../utils/textHelpers';
 import { isToolHidden } from '../utils/toolVisibility';
@@ -70,17 +70,17 @@ const HomePage: React.FC = () => {
     { to: '/prayers', title: 'Mental träning', icon: Brain, desc: 'Fokus, riktning och målbild' },
     { to: '/blessings', title: 'Tala välsignelser', icon: Sparkles, desc: 'Guds kraft i ditt liv' },
     { to: '/articles', title: 'Artiklar', icon: FileText, desc: 'Läs om tro' },
-    { to: '/verses', title: 'Slumpa en vers', icon: RefreshCw, desc: 'Dagens bibelord' },
+    { to: '/verses', title: 'Slumpa en tanke', icon: RefreshCw, desc: 'Dagens inspiration' },
   ];
   const toolCards = allToolCards
     .filter((tool) => !isToolHidden(tool.title))
     .slice(0, 4);
 
-  // --- Dagens Ord State ---
-  // Initialize with the deterministic daily verse
-  const initialVerse = getDailyVerse();
-  const [currentVerse, setCurrentVerse] = useState<BibleVerse>(() => initialVerse);
-  const [reflection, setReflection] = useState<string>(() => generateReflection(initialVerse));
+  // --- Dagens Tanke State ---
+  // Initialize with the deterministic daily thought
+  const initialThought = getDailyThought();
+  const [currentThought, setCurrentThought] = useState<Thought>(() => initialThought);
+  const [reflection, setReflection] = useState<string>(() => generateReflection(initialThought));
   const [isRandomizing, setIsRandomizing] = useState(false);
   const [animatedReference, setAnimatedReference] = useState<string | null>(null);
   const [animatedText, setAnimatedText] = useState<string | null>(null);
@@ -103,12 +103,12 @@ const HomePage: React.FC = () => {
       .join('');
   }
 
-  const handleRandomizeVerse = () => {
+  const handleRandomizeThought = () => {
     if (isRandomizing) return;
 
     setIsRandomizing(true);
     setIsReflectionVisible(false);
-    const nextVerse = getRandomVerse();
+    const nextThought = getRandomThought();
 
     if (scrambleIntervalRef.current) {
       clearInterval(scrambleIntervalRef.current);
@@ -119,8 +119,8 @@ const HomePage: React.FC = () => {
     }
 
     scrambleIntervalRef.current = window.setInterval(() => {
-      setAnimatedReference(scrambleString(nextVerse.reference));
-      setAnimatedText(scrambleString(nextVerse.text));
+      setAnimatedReference(scrambleString(nextThought.source));
+      setAnimatedText(scrambleString(nextThought.text));
     }, 50);
 
     setTimeout(() => {
@@ -131,8 +131,8 @@ const HomePage: React.FC = () => {
 
       setAnimatedReference(null);
       setAnimatedText(null);
-      setCurrentVerse(nextVerse);
-      setReflection(generateReflection(nextVerse));
+      setCurrentThought(nextThought);
+      setReflection(generateReflection(nextThought));
       setIsRandomizing(false);
       reflectionTimeoutRef.current = window.setTimeout(() => {
         setIsReflectionVisible(true);
@@ -230,14 +230,14 @@ const HomePage: React.FC = () => {
             {/* Content Container */}
             <div className="p-6 pt-4 space-y-6">
               
-              {/* Verse & Reference */}
+              {/* Thought & Source */}
               <div>
                 <p className="font-serif italic text-lg leading-relaxed text-primary text-center mb-3">
-                  "{isRandomizing && animatedText ? animatedText : currentVerse.text}"
+                  "{isRandomizing && animatedText ? animatedText : currentThought.text}"
                 </p>
                 <div className="flex justify-end">
                    <p className="text-sm font-bold text-accent">
-                     {isRandomizing && animatedReference ? animatedReference : currentVerse.reference}
+                     {isRandomizing && animatedReference ? animatedReference : currentThought.source}
                    </p>
                 </div>
               </div>
@@ -257,9 +257,9 @@ const HomePage: React.FC = () => {
               </div>
 
               {/* Action Button */}
-              {!isToolHidden('Slumpa en vers') && (
+              {!isToolHidden('Slumpa en tanke') && (
                 <button
-                  onClick={handleRandomizeVerse}
+                  onClick={handleRandomizeThought}
                   disabled={isRandomizing}
                   className="w-full border border-border bg-surface-variant/60 hover:bg-surface-variant active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed text-secondary font-semibold py-2.5 px-4 rounded-full flex items-center justify-center gap-2 transition-all"
                 >
