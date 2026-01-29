@@ -88,6 +88,7 @@ const HomePage: React.FC = () => {
   const [isReflectionVisible, setIsReflectionVisible] = useState(true);
 
   const scrambleIntervalRef = useRef<number | null>(null);
+  const reflectionTimeoutRef = useRef<number | null>(null);
 
   const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖabcdefghijklmnopqrstuvwxyzåäö';
 
@@ -112,6 +113,10 @@ const HomePage: React.FC = () => {
     if (scrambleIntervalRef.current) {
       clearInterval(scrambleIntervalRef.current);
     }
+    if (reflectionTimeoutRef.current) {
+      clearTimeout(reflectionTimeoutRef.current);
+      reflectionTimeoutRef.current = null;
+    }
 
     scrambleIntervalRef.current = window.setInterval(() => {
       setAnimatedReference(scrambleString(nextVerse.reference));
@@ -129,8 +134,11 @@ const HomePage: React.FC = () => {
       setCurrentVerse(nextVerse);
       setReflection(generateReflection(nextVerse));
       setIsRandomizing(false);
-      setIsReflectionVisible(true);
-      setReflectionAnimationKey((prev) => prev + 1);
+      reflectionTimeoutRef.current = window.setTimeout(() => {
+        setIsReflectionVisible(true);
+        setReflectionAnimationKey((prev) => prev + 1);
+        reflectionTimeoutRef.current = null;
+      }, 2000);
     }, 700);
   };
 
@@ -138,6 +146,9 @@ const HomePage: React.FC = () => {
     return () => {
       if (scrambleIntervalRef.current) {
         clearInterval(scrambleIntervalRef.current);
+      }
+      if (reflectionTimeoutRef.current) {
+        clearTimeout(reflectionTimeoutRef.current);
       }
     };
   }, []);
