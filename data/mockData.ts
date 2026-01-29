@@ -1396,5 +1396,121 @@ export const THOUGHTS: Thought[] = [
     text: 'Det du bär behöver inte bäras ensam. Att be om hjälp är ett tecken på mognad, inte svaghet.',
     source: 'Belthran',
     reflection: 'Finns det någon du kan sträcka dig mot i dag?'
+  },
+  {
+    id: 't9',
+    category: 'Stärkande tanke',
+    mainText: `Du behöver inte vara färdig
+för att vara på rätt väg.
+Det räcker att du fortsätter
+i samma riktning.`,
+    reflectionText: `Styrka växer oftare i kontinuitet
+än i genombrott.`,
+    text: `Du behöver inte vara färdig
+för att vara på rätt väg.
+Det räcker att du fortsätter
+i samma riktning.`,
+    source: 'Belthran',
+    reflection: `Styrka växer oftare i kontinuitet
+än i genombrott.`
+  },
+  {
+    id: 't10',
+    category: 'Stärkande tanke',
+    mainText: `Det du klarar idag
+är tillräckligt för idag.
+Mer än så krävs inte.`,
+    reflectionText: `Stabilitet byggs av rimliga steg,
+inte av perfektion.`,
+    text: `Det du klarar idag
+är tillräckligt för idag.
+Mer än så krävs inte.`,
+    source: 'Belthran',
+    reflection: `Stabilitet byggs av rimliga steg,
+inte av perfektion.`
+  },
+  {
+    id: 't11',
+    category: 'Dagens uppdrag',
+    mainText: `Gör en sak idag
+lite långsammare än vanligt.
+Lägg märke till vad som förändras.`,
+    reflectionText: `Tempo påverkar kvalitet
+mer än ansträngning.`,
+    text: `Gör en sak idag
+lite långsammare än vanligt.
+Lägg märke till vad som förändras.`,
+    source: 'Belthran',
+    reflection: `Tempo påverkar kvalitet
+mer än ansträngning.`
+  },
+  {
+    id: 't12',
+    category: 'Dagens uppdrag',
+    mainText: `Säg det du egentligen menar
+i en enkel mening.
+Utan att förklara dig.`,
+    reflectionText: `Tydlighet kräver ofta mindre ord,
+inte fler.`,
+    text: `Säg det du egentligen menar
+i en enkel mening.
+Utan att förklara dig.`,
+    source: 'Belthran',
+    reflection: `Tydlighet kräver ofta mindre ord,
+inte fler.`
+  },
+  {
+    id: 't13',
+    category: 'Reflektion',
+    mainText: `Vad i ditt liv just nu
+kräver närvaro
+snarare än lösning?`,
+    reflectionText: `Allt behöver inte fixas
+för att få vara helt.`,
+    text: `Vad i ditt liv just nu
+kräver närvaro
+snarare än lösning?`,
+    source: 'Belthran',
+    reflection: `Allt behöver inte fixas
+för att få vara helt.`
+  },
+  {
+    id: 't14',
+    category: 'Reflektion',
+    mainText: `När känner du dig mest samlad
+under en vanlig dag?`,
+    reflectionText: `Det du söker finns ofta redan
+i dina egna mönster.`,
+    text: `När känner du dig mest samlad
+under en vanlig dag?`,
+    source: 'Belthran',
+    reflection: `Det du söker finns ofta redan
+i dina egna mönster.`
+  },
+  {
+    id: 't15',
+    category: 'Bibelvers',
+    mainText: `Var stilla och besinna
+att jag är Gud.`,
+    reflectionText: `I stillhet klarnar ofta
+det som inte kan pressas fram.`,
+    text: `Var stilla och besinna
+att jag är Gud.`,
+    source: 'Belthran',
+    reflection: `I stillhet klarnar ofta
+det som inte kan pressas fram.`
+  },
+  {
+    id: 't16',
+    category: 'Bibelvers',
+    mainText: `Herren är min herde,
+mig skall intet fattas.`,
+    reflectionText: `Trygghet handlar ibland mer
+om riktning än om kontroll.`,
+    text: `Herren är min herde,
+mig skall intet fattas.`,
+    source: 'Belthran',
+    reflection: `Trygghet handlar ibland mer
+om riktning än om kontroll.`
   }
 ];

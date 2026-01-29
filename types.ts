@@ -69,4 +69,7 @@ export interface Thought {
   text: string;
   source: string;
   reflection?: string;
+  category?: string;
+  mainText?: string;
+  reflectionText?: string;
 }
